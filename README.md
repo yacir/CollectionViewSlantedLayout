@@ -9,7 +9,7 @@ YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing t
 
 <p align="center" >
   
-	<img src="./Screenshots/YBSlantedCollectionViewLayout.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout">
+	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout">
 
 </p>
 
