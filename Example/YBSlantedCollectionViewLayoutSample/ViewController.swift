@@ -8,6 +8,8 @@
 
 import UIKit
 
+import YBSlantedCollectionViewLayout
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,9 +28,7 @@ class ViewController: UIViewController {
                 images.append(image!)
             }
         }
-        let layout = collectionView.collectionViewLayout as! YBSlantedCollectionViewLayout
-        layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
-
+        
         self.navigationController?.navigationBarHidden = true
     }
     
@@ -76,11 +76,15 @@ extension ViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CustomCollectionCell
             
             cell.image = images[indexPath.row]
-            
-            let layout = collectionView.collectionViewLayout as! YBSlantedCollectionViewLayout
-            layout.applyMaskToCellView(cell, forIndexPath: indexPath)
-            
+
             return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
     }
 }
 

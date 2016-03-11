@@ -36,13 +36,16 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="clg-ma-frh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <collectionViewLayout key="collectionViewLayout" id="mTM-Vp-4z9" customClass="YBSlantedCollectionViewLayout" customModule="YBSlantedCollectionViewLayoutSample" customModuleProvider="target">
+                                <collectionViewLayout key="collectionViewLayout" id="mTM-Vp-4z9" customClass="YBSlantedCollectionViewLayout" customModule="YBSlantedCollectionViewLayout">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="slantingDelta">
                                             <integer key="value" value="50"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="firstCellSlantingEnabled" value="NO"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="lastCellSlantingEnabled" value="NO"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="firstCellSlantingEnabled" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="lastCellSlantingEnabled" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewLayout>
                                 <cells>

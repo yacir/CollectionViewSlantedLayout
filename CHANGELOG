@@ -1,5 +1,13 @@
 # YBSlantedCollectionViewLayout CHANGELOG
 
+## 2.0.0
+
+* Carthage support
+* Improve the attribution of the clic.
+* Add size options depending on the scroll direction
+* New class added : `YBSlantedCollectionViewCell`
+* Deprecat the `applyMaskToCellView (cellView : UICollectionViewCell, forIndexPath: NSIndexPath)` method
+
 ## 1.0.0
 
-Initial release.
+* Initial release.

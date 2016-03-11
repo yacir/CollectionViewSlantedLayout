@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "YBSlantedCollectionViewLayout"
-  s.version          = "1.0.0"
+  s.version          = "2.0.0"
   s.summary          = "UICollectionViewLayout allowing the display of slanted content on UICollectionView"
 
   s.description      = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'YBSlantedCollectionViewLayout/*.{h,swift}'
+  s.source_files = 'Source/*.{h,swift}'
   s.frameworks = 'UIKit'
 
   s.ios.deployment_target = '8.0'

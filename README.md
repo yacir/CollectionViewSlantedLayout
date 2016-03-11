@@ -3,14 +3,13 @@
 [![Version](https://img.shields.io/cocoapods/v/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Overview
 YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
 
 <p align="center" >
-  
-	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout">
-
+	<iframe src="https://appetize.io/embed/nd8vgwg0rkke19nmw3wzkapr5g?device=iphone5s&scale=75&autoplay=true&orientation=portrait&deviceColor=black" width="274px" height="587px" frameborder="0" scrolling="no"></iframe>
 </p>
 
 ## Usage
@@ -24,6 +23,7 @@ var firstCellSlantingEnabled: Bool
 var lastCellSlantingEnabled: Bool
 var lineSpacing: CGFloat
 var scrollDirection: UICollectionViewScrollDirection
+var itemSizeOptions: YBSlantedCollectionViewLayoutSizeOptions
 ```
 
 - _slantingDelta_ is the slanting delta.  Defaults to 50
@@ -32,40 +32,33 @@ var scrollDirection: UICollectionViewScrollDirection
 - _lastCellSlantingEnabled_ allows to enable the slanting for the last cell. By default, this property is set to `true`
 - _lineSpacing_ is the spacing to use between two items. Defaults to 10.0
 - _scrollDirection_ is the scroll direction. Defaults to `UICollectionViewScrollDirectionVertical`
+- _itemSizeOptions_ allows to set the item's width/height depending on the scroll direction.
 
 ### Apply the slanting mask 
 
-To apply the slanting mask on the cellView, call the `applyMaskToCellView` method like the following example:                         
-
-```swift
-func collectionView(collectionView: UICollectionView,
-  	 cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
-	let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CustomCollectionCell
-
-	// do something 
-
-	// Apply the mask
-	let layout = collectionView.collectionViewLayout as! YBSlantedCollectionViewLayout
-	layout.applyMaskToCellView(cell, forIndexPath: indexPath)
-
-	return cell
-}
-```
-
+To apply the slanting mask on the cellView, use the `YBSlantedCollectionViewCell` or subclass it.
 
 ## Installation
 
+### CocoaPods
 YBSlantedCollectionViewLayout is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 1.0'
+pod "YBSlantedCollectionViewLayout", '~> 2.0'
 ```
 
-## Todo
-- [] Carthage support
-- [] Improve the attribution of the clic
+### Carthage
+
+You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
+
+```terminal
+github 'yacir/YBSlantedCollectionViewLayout'
+```
+
+## Roadmap
+- [x] Improve the attribution of the clic
+- [x] Carthage support
 - [] Tests
 
 ## Author

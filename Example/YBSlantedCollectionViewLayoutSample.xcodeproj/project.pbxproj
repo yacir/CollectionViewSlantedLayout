@@ -7,17 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB132C751C91125000728981 /* YBSlantedCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB132C721C91123700728981 /* YBSlantedCollectionViewLayout.framework */; };
+		FB132C771C91137000728981 /* YBSlantedCollectionViewLayout.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FB132C721C91123700728981 /* YBSlantedCollectionViewLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB17358F1C83A0B400EEDB5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB17358E1C83A0B400EEDB5F /* AppDelegate.swift */; };
 		FB1735911C83A0B400EEDB5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1735901C83A0B400EEDB5F /* ViewController.swift */; };
 		FB1735941C83A0B400EEDB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1735921C83A0B400EEDB5F /* Main.storyboard */; };
 		FB1735961C83A0B400EEDB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB1735951C83A0B400EEDB5F /* Assets.xcassets */; };
 		FB1735991C83A0B400EEDB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1735971C83A0B400EEDB5F /* LaunchScreen.storyboard */; };
-		FB1735A51C83A17700EEDB5F /* YBSlantedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1735A41C83A17700EEDB5F /* YBSlantedCollectionViewLayout.swift */; };
 		FB1735A71C83A22600EEDB5F /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1735A61C83A22600EEDB5F /* CustomCollectionCell.swift */; };
 		FB1735B11C83AABA00EEDB5F /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1735B01C83AABA00EEDB5F /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FB132C711C91123700728981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB132C6C1C91123700728981 /* YBSlantedCollectionViewLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FB0AE5E51C910B3200821862;
+			remoteInfo = YBSlantedCollectionViewLayout;
+		};
+		FB132C731C91123700728981 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB132C6C1C91123700728981 /* YBSlantedCollectionViewLayout.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FB0AE5EF1C910B3300821862;
+			remoteInfo = YBSlantedCollectionViewLayoutTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB132C761C91135E00728981 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FB132C771C91137000728981 /* YBSlantedCollectionViewLayout.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FB132C6C1C91123700728981 /* YBSlantedCollectionViewLayout.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YBSlantedCollectionViewLayout.xcodeproj; path = ../YBSlantedCollectionViewLayout.xcodeproj; sourceTree = "<group>"; };
 		FB17358B1C83A0B400EEDB5F /* YBSlantedCollectionViewLayoutSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBSlantedCollectionViewLayoutSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB17358E1C83A0B400EEDB5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB1735901C83A0B400EEDB5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +57,6 @@
 		FB1735951C83A0B400EEDB5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB1735981C83A0B400EEDB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB17359A1C83A0B400EEDB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB1735A41C83A17700EEDB5F /* YBSlantedCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBSlantedCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FB1735A61C83A22600EEDB5F /* CustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		FB1735B01C83AABA00EEDB5F /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,18 +66,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB132C751C91125000728981 /* YBSlantedCollectionViewLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB132C6D1C91123700728981 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB132C721C91123700728981 /* YBSlantedCollectionViewLayout.framework */,
+				FB132C741C91123700728981 /* YBSlantedCollectionViewLayoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FB1735821C83A0B400EEDB5F = {
 			isa = PBXGroup;
 			children = (
-				FB1735A31C83A17700EEDB5F /* YBSlantedCollectionViewLayout */,
 				FB17358D1C83A0B400EEDB5F /* YBSlantedCollectionViewLayoutSample */,
 				FB17358C1C83A0B400EEDB5F /* Products */,
+				FB132C6C1C91123700728981 /* YBSlantedCollectionViewLayout.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,15 +111,6 @@
 				FB17359A1C83A0B400EEDB5F /* Info.plist */,
 			);
 			path = YBSlantedCollectionViewLayoutSample;
-			sourceTree = "<group>";
-		};
-		FB1735A31C83A17700EEDB5F /* YBSlantedCollectionViewLayout */ = {
-			isa = PBXGroup;
-			children = (
-				FB1735A41C83A17700EEDB5F /* YBSlantedCollectionViewLayout.swift */,
-			);
-			name = YBSlantedCollectionViewLayout;
-			path = ../YBSlantedCollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		FB1735CF1C84FDED00EEDB5F /* Controllers */ = {
@@ -108,6 +140,7 @@
 				FB1735871C83A0B400EEDB5F /* Sources */,
 				FB1735881C83A0B400EEDB5F /* Frameworks */,
 				FB1735891C83A0B400EEDB5F /* Resources */,
+				FB132C761C91135E00728981 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -144,12 +177,35 @@
 			mainGroup = FB1735821C83A0B400EEDB5F;
 			productRefGroup = FB17358C1C83A0B400EEDB5F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FB132C6D1C91123700728981 /* Products */;
+					ProjectRef = FB132C6C1C91123700728981 /* YBSlantedCollectionViewLayout.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FB17358A1C83A0B400EEDB5F /* YBSlantedCollectionViewLayoutSample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FB132C721C91123700728981 /* YBSlantedCollectionViewLayout.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YBSlantedCollectionViewLayout.framework;
+			remoteRef = FB132C711C91123700728981 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FB132C741C91123700728981 /* YBSlantedCollectionViewLayoutTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = YBSlantedCollectionViewLayoutTests.xctest;
+			remoteRef = FB132C731C91123700728981 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FB1735891C83A0B400EEDB5F /* Resources */ = {
@@ -173,7 +229,6 @@
 				FB1735A71C83A22600EEDB5F /* CustomCollectionCell.swift in Sources */,
 				FB1735911C83A0B400EEDB5F /* ViewController.swift in Sources */,
 				FB17358F1C83A0B400EEDB5F /* AppDelegate.swift in Sources */,
-				FB1735A51C83A17700EEDB5F /* YBSlantedCollectionViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YBSlantedCollectionViewLayoutSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBSlantedCollectionViewLayoutSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -298,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YBSlantedCollectionViewLayoutSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YB.YBSlantedCollectionViewLayoutSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

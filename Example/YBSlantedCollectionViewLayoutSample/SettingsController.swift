@@ -10,6 +10,8 @@ import Foundation
 
 import UIKit
 
+import YBSlantedCollectionViewLayout
+
 class SettingsController: UITableViewController {
     
     weak var collectionViewLayout: YBSlantedCollectionViewLayout!
