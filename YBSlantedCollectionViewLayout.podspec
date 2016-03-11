@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = "https://github.com/yacir/YBSlantedCollectionViewLayout"
-  s.screenshots     = "https://raw.githubusercontent.com/yacir/YBSlantedCollectionViewLayout/master/Screenshots/YBSlantedCollectionViewLayout.gif"
   s.license          = 'MIT'
   s.author           = { "Yassir Barchi" => "dev.yassir@gmail.com" }
   s.source           = { :git => "https://github.com/yacir/YBSlantedCollectionViewLayout.git", :tag => s.version.to_s }
