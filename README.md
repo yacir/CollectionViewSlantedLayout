@@ -5,7 +5,6 @@
 [![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master)](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout) 
-[![codecov.io](https://codecov.io/github/yacir/YBSlantedCollectionViewLayout/coverage.svg?branch=master)](https://codecov.io/github/yacir/YBSlantedCollectionViewLayout?branch=master)
 
 ## Overview
 YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
@@ -51,7 +50,7 @@ YBSlantedCollectionViewLayout is available through [CocoaPods](http://cocoapods.
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 2.0'
+pod "YBSlantedCollectionViewLayout", '~> 2.1'
 ```
 
 ### Carthage
