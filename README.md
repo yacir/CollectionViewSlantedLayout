@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master)](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout) 
+[![codecov.io](https://codecov.io/github/yacir/YBSlantedCollectionViewLayout/coverage.svg?branch=master)](https://codecov.io/github/yacir/YBSlantedCollectionViewLayout?branch=master)
 
 ## Overview
 YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
@@ -11,7 +13,9 @@ YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing t
 ## [Live Demo] (https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g)
 
 <p align="center" >
+
   	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout"> 
+
 </p>
 
 ## Usage
@@ -61,7 +65,7 @@ github 'yacir/YBSlantedCollectionViewLayout'
 ## Roadmap
 - [x] Improve the attribution of the clic
 - [x] Carthage support
-- [] Tests
+- [x] Tests
 
 ## Author
 

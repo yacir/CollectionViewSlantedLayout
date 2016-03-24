@@ -125,12 +125,6 @@ public class YBSlantedCollectionViewLayout: UICollectionViewLayout {
     internal var hasVerticalDirection: Bool {
         return scrollDirection == UICollectionViewScrollDirection.Vertical
     }
-
-    /// :nodoc:
-    @available(*, deprecated, message="Use YBSlantedCollectionViewCell")
-    public func applyMaskToCellView (cellView : UICollectionViewCell, forIndexPath: NSIndexPath) {
-        cellView.layer.mask = self.maskForItemAtIndexPath(forIndexPath)
-    }
     
     /// :nodoc:
     private func maskForItemAtIndexPath(indexPath: NSIndexPath) -> CAShapeLayer {

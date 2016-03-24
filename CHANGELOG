@@ -1,5 +1,10 @@
 # YBSlantedCollectionViewLayout CHANGELOG
 
+## 2.1.0
+
+* Add tests
+* Remove the `applyMaskToCellView (cellView : UICollectionViewCell, forIndexPath: NSIndexPath)` method
+
 ## 2.0.0
 
 * Carthage support

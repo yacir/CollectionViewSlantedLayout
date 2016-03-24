@@ -30,8 +30,10 @@ import UIKit
  */
 public class YBSlantedCollectionViewCell: UICollectionViewCell {
     
+    /// :nodoc:
     private var slantedLayerMask: CAShapeLayer?
 
+    /// :nodoc:
     override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
         
         if (self.slantedLayerMask != nil) {
@@ -44,6 +46,7 @@ public class YBSlantedCollectionViewCell: UICollectionViewCell {
         return  (super.pointInside(point, withEvent: event))
     }
     
+    /// :nodoc:
     override public func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         let attributes = layoutAttributes as! YBSlantedCollectionViewLayoutAttributes
         super.applyLayoutAttributes(attributes)

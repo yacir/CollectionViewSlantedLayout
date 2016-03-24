@@ -13,6 +13,7 @@
 		FB132C641C910F5900728981 /* YBSlantedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C611C910F5900728981 /* YBSlantedCollectionViewCell.swift */; };
 		FB132C651C910F5900728981 /* YBSlantedCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C621C910F5900728981 /* YBSlantedCollectionViewLayout.swift */; };
 		FB132C661C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C631C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift */; };
+		FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		FB132C611C910F5900728981 /* YBSlantedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBSlantedCollectionViewCell.swift; sourceTree = "<group>"; };
 		FB132C621C910F5900728981 /* YBSlantedCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBSlantedCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FB132C631C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBSlantedCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				FB132C591C910C0300728981 /* YBSlantedCollectionViewLayoutTests.swift */,
+				FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */,
 				FB132C691C910F8200728981 /* Supporting Files */,
 			);
 			path = Tests;
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */,
 				FB132C5F1C910E4300728981 /* YBSlantedCollectionViewLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
