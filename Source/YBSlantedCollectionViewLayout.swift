@@ -27,16 +27,35 @@ import UIKit;
 /// The item size options
 public struct YBSlantedCollectionViewLayoutSizeOptions {
     /**
-     * The item height if the scroll direction is setted to `Vertical`.
-     * Default value is `220`
+     The item height if the scroll direction is setted to `Vertical`.
+     Default value is `220`
      */
-    var VerticalSize: CGFloat = 220
+    public var verticalSize: CGFloat
     
     /**
-     * The item width if the scroll direction is setted to `Horizontal`.
-     * Default value is `290`
+     The item width if the scroll direction is setted to `Horizontal`.
+     Default value is `290`
      */
-    var HorizontalSize: CGFloat = 290
+    public var horizontalSize: CGFloat
+    
+    /**
+     Init with default values
+     */
+    public init() {
+        self.verticalSize = 220;
+        self.horizontalSize = 290;
+    }
+
+    /**
+     Initialize with custom values
+     
+     - Parameter verticalSize:     Cell's height for `Vertical` scroll direction
+     - Parameter horizontalSize:   Cell's width for `Horizontal` scroll direction
+     */
+    public init(verticalSize verticalSize:CGFloat, horizontalSize:CGFloat) {
+        self.verticalSize = verticalSize;
+        self.horizontalSize = horizontalSize;
+    }
 }
 
 /**
@@ -116,10 +135,10 @@ public class YBSlantedCollectionViewLayout: UICollectionViewLayout {
 
     internal var size: CGFloat {
         if ( hasVerticalDirection ) {
-            return itemSizeOptions.VerticalSize
+            return itemSizeOptions.verticalSize
         }
         
-        return itemSizeOptions.HorizontalSize
+        return itemSizeOptions.horizontalSize
     }
     
     internal var hasVerticalDirection: Bool {
