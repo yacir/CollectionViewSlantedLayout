@@ -29,21 +29,21 @@ class ViewController: UIViewController {
             }
         }
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.slide)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-        return UIStatusBarAnimation.Slide
+    override var preferredStatusBarUpdateAnimation : UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,9 +51,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
             
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSettings" {
-            let navigation = segue.destinationViewController as! UINavigationController
+            let navigation = segue.destination as! UINavigationController
 
             let settingsController = navigation.viewControllers[0] as! SettingsController
             
@@ -66,14 +66,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
-    func collectionView(collectionView: UICollectionView,
-        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CustomCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionCell
             
             cell.image = images[indexPath.row]
 
@@ -83,19 +83,19 @@ extension ViewController: UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegate {
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
     }
 }
 
 extension ViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let collectionView = self.collectionView else {return}
-        guard let visibleCells = collectionView.visibleCells() as? [CustomCollectionCell] else {return}
+        guard let visibleCells = collectionView.visibleCells as? [CustomCollectionCell] else {return}
         for parallaxCell in visibleCells {
             let yOffset = ((collectionView.contentOffset.y - parallaxCell.frame.origin.y) / parallaxCell.imageHeight) * yOffsetSpeed
             let xOffset = ((collectionView.contentOffset.x - parallaxCell.frame.origin.x) / parallaxCell.imageWidth) * xOffsetSpeed
-            parallaxCell.offset(CGPointMake(xOffset, yOffset))
+            parallaxCell.offset(CGPoint(x: xOffset,y :yOffset))
         }
     }
 }
