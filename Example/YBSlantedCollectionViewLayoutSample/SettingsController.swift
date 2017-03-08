@@ -26,59 +26,59 @@ class SettingsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.reverseSlantingDirectionSwitch.on = self.collectionViewLayout.reverseSlantingAngle
-        self.firstCellSlantingSwitch.on = self.collectionViewLayout.firstCellSlantingEnabled
-        self.lastCellSlantingSwitch.on = self.collectionViewLayout.lastCellSlantingEnabled
-        self.scrollDirectionSwitch.on = self.collectionViewLayout.scrollDirection == UICollectionViewScrollDirection.Horizontal
+        self.reverseSlantingDirectionSwitch.isOn = self.collectionViewLayout.reverseSlantingAngle
+        self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.firstCellSlantingEnabled
+        self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.lastCellSlantingEnabled
+        self.scrollDirectionSwitch.isOn = self.collectionViewLayout.scrollDirection == UICollectionViewScrollDirection.horizontal
         self.slantingDeltaSlider.value = Float(self.collectionViewLayout.slantingDelta)
         self.lineSpacingSlider.value = Float(self.collectionViewLayout.lineSpacing)
         
         
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
+        UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.slide)
 
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return false
     }
     
-    override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-        return UIStatusBarAnimation.Slide
+    override var preferredStatusBarUpdateAnimation : UIStatusBarAnimation {
+        return UIStatusBarAnimation.slide
     }
 
-    @IBAction func slantingDirectionChanged(sender: UISwitch) {
-        self.collectionViewLayout.reverseSlantingAngle = sender.on
+    @IBAction func slantingDirectionChanged(_ sender: UISwitch) {
+        self.collectionViewLayout.reverseSlantingAngle = sender.isOn
     }
     
-    @IBAction func firstCellSlantingSwitchChanged(sender: UISwitch) {
-        self.collectionViewLayout.firstCellSlantingEnabled = sender.on
+    @IBAction func firstCellSlantingSwitchChanged(_ sender: UISwitch) {
+        self.collectionViewLayout.firstCellSlantingEnabled = sender.isOn
     }
     
-    @IBAction func lastCellSlantingSwitchChanged(sender: UISwitch) {
-        self.collectionViewLayout.lastCellSlantingEnabled = sender.on
+    @IBAction func lastCellSlantingSwitchChanged(_ sender: UISwitch) {
+        self.collectionViewLayout.lastCellSlantingEnabled = sender.isOn
     }
     
-    @IBAction func scrollDirectionChanged(sender: UISwitch) {
-        if sender.on {
-            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+    @IBAction func scrollDirectionChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         }
         else {
-            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.Vertical
+            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         }
         self.collectionViewLayout.collectionView?.reloadData()
     }
     
     
-    @IBAction func slantingDeltaChanged(sender: UISlider) {
+    @IBAction func slantingDeltaChanged(_ sender: UISlider) {
         self.collectionViewLayout.slantingDelta = UInt(sender.value)
     }
     
-    @IBAction func lineSpacingChanged(sender: UISlider) {
+    @IBAction func lineSpacingChanged(_ sender: UISlider) {
         self.collectionViewLayout.lineSpacing = CGFloat(sender.value)
     }
-    @IBAction func done(sender: AnyObject) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-            self.collectionViewLayout.collectionView?.scrollRectToVisible(CGRectMake(0, 0, 0, 0), animated: true);
+    @IBAction func done(_ sender: AnyObject) {
+        self.presentingViewController?.dismiss(animated: true, completion: { () -> Void in
+            self.collectionViewLayout.collectionView?.scrollRectToVisible(CGRect(x: 0, y: 0, width: 0, height: 0), animated: true);
         })
     }
 }

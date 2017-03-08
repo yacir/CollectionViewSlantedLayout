@@ -34,7 +34,7 @@ class CustomCollectionCell: YBSlantedCollectionViewCell {
     }
 
     
-    func offset(offset: CGPoint) {
-        imageView.frame = CGRectOffset(self.imageView.bounds, offset.x, offset.y)
+    func offset(_ offset: CGPoint) {
+        imageView.frame = self.imageView.bounds.offsetBy(dx: offset.x, dy: offset.y)
     }
 }

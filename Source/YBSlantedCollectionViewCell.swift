@@ -28,28 +28,28 @@ import UIKit
  YBSlantedCollectionViewCell is a subclass of UICollectionViewCell. 
  Use it or subclass it to apply the slanting mask on your cells.
  */
-public class YBSlantedCollectionViewCell: UICollectionViewCell {
+open class YBSlantedCollectionViewCell: UICollectionViewCell {
     
     /// :nodoc:
-    private var slantedLayerMask: CAShapeLayer?
+    fileprivate var slantedLayerMask: CAShapeLayer?
 
     /// :nodoc:
-    override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         
         if (self.slantedLayerMask != nil) {
             let bezierPath = UIBezierPath()
-            bezierPath.CGPath = self.slantedLayerMask!.path!
-            let result = bezierPath.containsPoint(point)
+            bezierPath.cgPath = self.slantedLayerMask!.path!
+            let result = bezierPath.contains(point)
             return result
         }
         
-        return  (super.pointInside(point, withEvent: event))
+        return  (super.point(inside: point, with: event))
     }
     
     /// :nodoc:
-    override public func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+    override open func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         let attributes = layoutAttributes as! YBSlantedCollectionViewLayoutAttributes
-        super.applyLayoutAttributes(attributes)
+        super.apply(attributes)
         self.slantedLayerMask = attributes.slantedLayerMask
         self.layer.mask = attributes.slantedLayerMask
     }

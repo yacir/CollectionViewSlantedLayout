@@ -25,21 +25,21 @@
 import UIKit
 
 /// :nodoc:
-public class YBSlantedCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
+open class YBSlantedCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     
     /// :nodoc:
-    public var slantedLayerMask :CAShapeLayer?
+    open var slantedLayerMask :CAShapeLayer?
     
     /// :nodoc:
-    override public func copyWithZone(zone: NSZone) -> AnyObject {
+    override open func copy(with zone: NSZone?) -> Any {
         
-        let attributesCopy = super.copyWithZone(zone) as! YBSlantedCollectionViewLayoutAttributes
+        let attributesCopy = super.copy(with: zone) as! YBSlantedCollectionViewLayoutAttributes
         attributesCopy.slantedLayerMask = self.slantedLayerMask
         return attributesCopy
     }
     
     /// :nodoc:
-    override public func isEqual(object: AnyObject?) -> Bool {
+    override open func isEqual(_ object: Any?) -> Bool {
         
         if let o = object as? YBSlantedCollectionViewLayoutAttributes {
             if self.slantedLayerMask != o.slantedLayerMask {

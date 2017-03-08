@@ -25,9 +25,9 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         collectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
         
         horizontalSlantedViewLayout = YBSlantedCollectionViewLayout()
-        horizontalSlantedViewLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
+        horizontalSlantedViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         horizontalSlantedViewLayout.lineSpacing = 3
-        horizontalSlantedViewLayout.itemSizeOptions = YBSlantedCollectionViewLayoutSizeOptions(VerticalSize: 100, HorizontalSize: 210)
+        horizontalSlantedViewLayout.itemSizeOptions = YBSlantedCollectionViewLayoutSizeOptions(verticalSize: 100, horizontalSize: 210)
         horizontalSlantedViewLayout.reverseSlantingAngle = true
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
@@ -44,19 +44,19 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         XCTAssertEqual(verticalSlantedViewLayout.firstCellSlantingEnabled, true)
         XCTAssertEqual(verticalSlantedViewLayout.lastCellSlantingEnabled, true)
         XCTAssertEqual(verticalSlantedViewLayout.lineSpacing, 10)
-        XCTAssertEqual(verticalSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.Vertical)
-        XCTAssertEqual(verticalSlantedViewLayout.itemSizeOptions.VerticalSize, 220)
-        XCTAssertEqual(verticalSlantedViewLayout.itemSizeOptions.HorizontalSize, 290)
+        XCTAssertEqual(verticalSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.vertical)
+        XCTAssertEqual(verticalSlantedViewLayout.itemSizeOptions.verticalSize, 220)
+        XCTAssertEqual(verticalSlantedViewLayout.itemSizeOptions.horizontalSize, 290)
     }
     
     func testLayoutContentViewSizeUsesController() {
         collectionViewController.items = [0, 1, 2, 3, 5, 6, 7, 8, 9]
         collectionViewController.view.layoutIfNeeded()
 
-        let verticalSlantedViewLayoutSize = self.verticalSlantedViewLayout.collectionViewContentSize()
+        let verticalSlantedViewLayoutSize = self.verticalSlantedViewLayout.collectionViewContentSize
         let collectionViewControllerSize = self.collectionViewController.view.frame.size
         
-        let size = verticalSlantedViewLayout.itemSizeOptions.VerticalSize
+        let size = verticalSlantedViewLayout.itemSizeOptions.verticalSize
         let lineSpicing = verticalSlantedViewLayout.lineSpacing
         let slantingDelta = CGFloat(verticalSlantedViewLayout.slantingDelta)
         
@@ -69,10 +69,10 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         horizontalCollectionViewController.items = [0, 1, 2, 3, 5, 6, 7, 8, 9]
         horizontalCollectionViewController.view.layoutIfNeeded()
         
-        let verticalSlantedViewLayoutSize = horizontalSlantedViewLayout.collectionViewContentSize()
+        let verticalSlantedViewLayoutSize = horizontalSlantedViewLayout.collectionViewContentSize
         let collectionViewControllerSize = horizontalCollectionViewController.view.frame.size
         
-        let size = horizontalSlantedViewLayout.itemSizeOptions.HorizontalSize
+        let size = horizontalSlantedViewLayout.itemSizeOptions.horizontalSize
         let lineSpicing = horizontalSlantedViewLayout.lineSpacing
         let slantingDelta = CGFloat(horizontalSlantedViewLayout.slantingDelta)
         
@@ -83,7 +83,7 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
 
     
     func testLayoutHasSmoothScrolling() {
-        let proposedOffset = verticalSlantedViewLayout.targetContentOffsetForProposedContentOffset(CGPoint(), withScrollingVelocity: CGPoint())
+        let proposedOffset = verticalSlantedViewLayout.targetContentOffset(forProposedContentOffset: CGPoint(), withScrollingVelocity: CGPoint())
         
         XCTAssertEqual(proposedOffset.x, 0)
         XCTAssertEqual(proposedOffset.y, 0)
@@ -102,7 +102,7 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         
         collectionViewController.view.layoutIfNeeded()
         
-        let attributes = verticalSlantedViewLayout.layoutAttributesForElementsInRect(CGRect())!
+        let attributes = verticalSlantedViewLayout.layoutAttributesForElements(in: CGRect())!
         
         XCTAssertEqual(verticalSlantedViewLayout.cached, attributes)
     }
@@ -112,14 +112,14 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         
         collectionViewController.view.layoutIfNeeded()
         
-        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
-        let attribute = verticalSlantedViewLayout.layoutAttributesForItemAtIndexPath(indexPath)
+        let indexPath = IndexPath(item: 0, section: 0)
+        let attribute = verticalSlantedViewLayout.layoutAttributesForItem(at: indexPath)
         
         XCTAssertEqual(verticalSlantedViewLayout.cached[0], attribute)
     }
     
     func testLayoutShouldInvalidateLayoutForBoundsChange() {
-        XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayoutForBoundsChange(CGRect()))
+        XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayout(forBoundsChange: CGRect()))
     }
     
 }
