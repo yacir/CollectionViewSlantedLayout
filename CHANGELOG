@@ -1,5 +1,9 @@
 # YBSlantedCollectionViewLayout CHANGELOG
 
+## 2.2.0
+* Swift 3.0 version
+* Swift Package Manager support
+
 ## 2.1.1
 * Add a public initializer for YBSlantedCollectionViewLayoutSizeOptions.
 

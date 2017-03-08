@@ -50,7 +50,7 @@ YBSlantedCollectionViewLayout is available through [CocoaPods](http://cocoapods.
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 2.1'
+pod "YBSlantedCollectionViewLayout", '~> 2.2'
 ```
 
 ### Carthage
@@ -66,7 +66,7 @@ github 'yacir/YBSlantedCollectionViewLayout'
 - [x] Carthage support
 - [x] Tests
 - [x] Swift 3 support
-- [ ] Swift Package Manager support
+- [x] Swift Package Manager support
 
 ## Author
 

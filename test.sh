@@ -1,5 +1,5 @@
 #! /bin/bash
-TEST_CMD="xcodebuild -scheme YBSlantedCollectionViewLayout -workspace YBSlantedCollectionViewLayout.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.1' build test"
+TEST_CMD="xcodebuild analyze build test -workspace YBSlantedCollectionViewLayout.xcworkspace -scheme YBSlantedCollectionViewLayout -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES"
 
 which -s xcpretty
 XCPRETTY_INSTALLED=$?
