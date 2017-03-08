@@ -65,7 +65,7 @@ github 'yacir/YBSlantedCollectionViewLayout'
 - [x] Improve the attribution of the clic
 - [x] Carthage support
 - [x] Tests
-- [ ] Swift 3 support
+- [x] Swift 3 support
 - [ ] Swift Package Manager support
 
 ## Author
