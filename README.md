@@ -12,12 +12,10 @@
 ## Overview
 YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
 
-## [Live Demo] (https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g)
+## [Live Demo](https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g)
 
-<p align="center" >
-
+<p align="center">
   	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout"> 
-
 </p>
 
 ## Usage
