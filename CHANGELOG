@@ -1,5 +1,8 @@
 # YBSlantedCollectionViewLayout CHANGELOG
 
+## 3.0
+* Swift 4.0 version
+
 ## 2.2.0
 * Swift 3.0 version
 * Swift Package Manager support
