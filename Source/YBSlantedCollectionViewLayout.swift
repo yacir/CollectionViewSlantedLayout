@@ -245,18 +245,3 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
         return cached[indexPath.item]
     }
 }
-
-private extension UICollectionViewLayout {
-    
-    var numberOfItems: Int {
-        return collectionView!.numberOfItems(inSection: 0)
-    }
-    
-    var width: CGFloat {
-        return collectionView!.frame.width-collectionView!.contentInset.left-collectionView!.contentInset.right
-    }
-    
-    var height: CGFloat {
-        return collectionView!.frame.height-collectionView!.contentInset.top-collectionView!.contentInset.bottom
-    }
-}

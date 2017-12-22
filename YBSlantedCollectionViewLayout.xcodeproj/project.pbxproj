@@ -15,6 +15,7 @@
 		FB132C661C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C631C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift */; };
 		FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */; };
 		FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */; };
+		FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		FB132C631C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBSlantedCollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
+		FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */,
+				FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */,
+				FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */,
 				FB132C641C910F5900728981 /* YBSlantedCollectionViewCell.swift in Sources */,
 				FB132C651C910F5900728981 /* YBSlantedCollectionViewLayout.swift in Sources */,
 				FB132C661C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift in Sources */,
