@@ -28,7 +28,7 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         horizontalSlantedViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         horizontalSlantedViewLayout.lineSpacing = 3
         horizontalSlantedViewLayout.itemSizeOptions = YBSlantedCollectionViewLayoutSizeOptions(verticalSize: 100, horizontalSize: 210)
-        horizontalSlantedViewLayout.reverseSlantingAngle = true
+        horizontalSlantedViewLayout.slantingDirection = .downward
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
     }
@@ -40,7 +40,7 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
     
     func testSlantedViewLayoutHasDefaultValues() {
         XCTAssertEqual(verticalSlantedViewLayout.slantingDelta, 50)
-        XCTAssertEqual(verticalSlantedViewLayout.reverseSlantingAngle, false)
+        XCTAssertEqual(verticalSlantedViewLayout.slantingDirection, .upward)
         XCTAssertEqual(verticalSlantedViewLayout.firstCellSlantingEnabled, true)
         XCTAssertEqual(verticalSlantedViewLayout.lastCellSlantingEnabled, true)
         XCTAssertEqual(verticalSlantedViewLayout.lineSpacing, 10)

@@ -3,6 +3,12 @@
 ## 3.0
 * Swift 4.0 version
 
+#### Added
+* Add the `slantingDirection` property
+
+#### removed
+* Remove the `reverseSlantingAngle` property
+
 ## 2.2.0
 * Swift 3.0 version
 * Swift Package Manager support

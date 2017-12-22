@@ -16,7 +16,7 @@ class SettingsController: UITableViewController {
     
     weak var collectionViewLayout: YBSlantedCollectionViewLayout!
     
-    @IBOutlet weak var reverseSlantingDirectionSwitch: UISwitch!
+    @IBOutlet weak var slantingDirectionSegment: UISegmentedControl!
     @IBOutlet weak var firstCellSlantingSwitch: UISwitch!
     @IBOutlet weak var lastCellSlantingSwitch: UISwitch!
     @IBOutlet weak var scrollDirectionSwitch: UISwitch!
@@ -26,7 +26,7 @@ class SettingsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.reverseSlantingDirectionSwitch.isOn = self.collectionViewLayout.reverseSlantingAngle
+        self.slantingDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.slantingDirection == .downward) ? 0 : 1
         self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.firstCellSlantingEnabled
         self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.lastCellSlantingEnabled
         self.scrollDirectionSwitch.isOn = self.collectionViewLayout.scrollDirection == UICollectionViewScrollDirection.horizontal
@@ -35,7 +35,7 @@ class SettingsController: UITableViewController {
         
         
         UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.slide)
-
+        
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -45,9 +45,9 @@ class SettingsController: UITableViewController {
     override var preferredStatusBarUpdateAnimation : UIStatusBarAnimation {
         return UIStatusBarAnimation.slide
     }
-
-    @IBAction func slantingDirectionChanged(_ sender: UISwitch) {
-        self.collectionViewLayout.reverseSlantingAngle = sender.isOn
+    
+    @IBAction func slantingDirectionChanged(_ sender: UISegmentedControl) {
+        self.collectionViewLayout.slantingDirection = (sender.selectedSegmentIndex == 0 ? .downward : .upward )
     }
     
     @IBAction func firstCellSlantingSwitchChanged(_ sender: UISwitch) {
@@ -82,3 +82,4 @@ class SettingsController: UITableViewController {
         })
     }
 }
+

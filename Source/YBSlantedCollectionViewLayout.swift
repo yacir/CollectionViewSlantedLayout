@@ -59,38 +59,46 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
 }
 
 /**
+ Constants indicating the direction of slanting for the layout.
+ */
+@objc public enum SlantingDirection: Int {
+    /**
+     Downward slanting direction
+     */
+    case downward
+    /**
+     Upward slanting direction
+     */
+    case upward
+}
+
+/**
  YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout 
  allowing the display of slanted content on UICollectionView.
  
  By default, this UICollectionViewLayout has initialize a set
  of properties to work as designed.
  */
-open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
+@objc open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
 
     /**
      The slanting delta.
      
      By default, this property is set to `50`.
-     
-     - Parameter slantingDelta:     The slantin delta
      */
     @IBInspectable open var slantingDelta: UInt = 50
     
     /**
-     Reverse the slanting angle.
+     The slanting direction direction.
      
-     Set it to `true` to reverse the slanting angle. By default, this property is set to `false`.
-     
-     - Parameter reverseSlantingAngle:     The slanting angle reversing status
-     */
-    @IBInspectable open var reverseSlantingAngle: Bool = false
-
+     The default value of this property is `upward`.
+    */
+    @objc open var slantingDirection: SlantingDirection = .upward
+    
     /**
      Allows to disable the slanting for the first cell.
      
      Set it to `false` to disable the slanting for the first cell. By default, this property is set to `true`.
-     
-     - Parameter firstCellSlantingEnabled:     The first cell slanting status
      */
     @IBInspectable open var firstCellSlantingEnabled: Bool = true
 
@@ -98,8 +106,6 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
      Allows to disable the slanting for the last cell.
      
      Set it to `false` to disable the slanting for the last cell. By default, this property is set to `true`.
-     
-     - Parameter lastCellSlantingEnabled:     The last cell slanting status
      */
     @IBInspectable open var lastCellSlantingEnabled: Bool = true
     
@@ -107,8 +113,6 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
      The spacing to use between two items.
      
      The spacing to use between two items. The default value of this property is 10.0.
-     
-     - Parameter lineSpacing:     The spacing to use between two items
      */
     @IBInspectable open var lineSpacing: CGFloat = 10
 
@@ -117,11 +121,8 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
      
      The grid layout scrolls along one axis only, either horizontally or vertically. 
      The default value of this property is `UICollectionViewScrollDirectionVertical`.
-     
-     - Parameter scrollDirection:     The scroll direction of the grid
      */
     open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical
-    
     
     /**
      The item size options
@@ -134,15 +135,7 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
     internal var cached = [YBSlantedCollectionViewLayoutAttributes]()
 
     internal var size: CGFloat {
-        if ( hasVerticalDirection ) {
-            return itemSizeOptions.verticalSize
-        }
-        
-        return itemSizeOptions.horizontalSize
-    }
-    
-    internal var hasVerticalDirection: Bool {
-        return scrollDirection == UICollectionViewScrollDirection.vertical
+        return scrollDirection.isVertical ? itemSizeOptions.verticalSize : itemSizeOptions.horizontalSize
     }
     
     /// :nodoc:
@@ -154,16 +147,16 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
         
         let disableSlantingForTheFirstLastCell = indexPath.row == numberOfItems-1 && !lastCellSlantingEnabled;
         
-        if ( hasVerticalDirection ) {
-            if (reverseSlantingAngle) {
+        if ( scrollDirection.isVertical ) {
+            switch self.slantingDirection {
+            case .downward:
                 bezierPath.move(to: CGPoint.init(x: 0, y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta)))
                 bezierPath.addLine(to: CGPoint.init(x: width, y: size))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta)))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: 0))
-            }
-            else {
-                let startPoint = CGPoint.init(x: 0, y: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta))
+            default:
+                let startPoint = CGPoint.init(x: 0, y: disableSlantingForTheFirstCell ? 0 : CGFloat(self.slantingDelta))
                 bezierPath.move(to: startPoint)
                 bezierPath.addLine(to: CGPoint.init(x: width, y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta)))
@@ -172,15 +165,15 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
             }
         }
         else {
-            if (reverseSlantingAngle) {
+            switch self.slantingDirection {
+            case .upward:
                 let startPoint = CGPoint.init(x: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta), y: 0)
                 bezierPath.move(to: startPoint)
                 bezierPath.addLine(to: CGPoint.init(x: size, y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta), y: height))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: height))
                 bezierPath.addLine(to: startPoint)
-            }
-            else {
+            default:
                 bezierPath.move(to: CGPoint.init(x: 0, y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta), y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: size, y: height))
@@ -188,7 +181,7 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: 0))
             }
         }
-        
+
         bezierPath.close()
         
         slantedLayerMask.path = bezierPath.cgPath
@@ -199,14 +192,8 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
     //MARK: CollectionViewLayout methods overriding
     /// :nodoc:
     override open var collectionViewContentSize : CGSize {
-        
         let contentSize = CGFloat(numberOfItems) * (size + lineSpacing - CGFloat(slantingDelta)) - lineSpacing + CGFloat(slantingDelta)
-        
-        if ( hasVerticalDirection ) {
-            return CGSize(width: width, height: contentSize)
-        }
-        
-        return CGSize(width: contentSize, height: height)
+        return scrollDirection.isVertical ? CGSize(width: width, height: contentSize) : CGSize(width: contentSize, height: height)
     }
 
     /// :nodoc:
@@ -226,7 +213,7 @@ open class YBSlantedCollectionViewLayout: UICollectionViewLayout {
             
             let frame : CGRect
             
-            if ( hasVerticalDirection ) {
+            if ( scrollDirection.isVertical ) {
                 frame = CGRect(x: 0, y: position, width: width, height: size)
             }
             else {
