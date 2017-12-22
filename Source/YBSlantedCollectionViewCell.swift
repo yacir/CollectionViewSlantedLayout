@@ -32,26 +32,27 @@ open class YBSlantedCollectionViewCell: UICollectionViewCell {
     
     /// :nodoc:
     fileprivate var slantedLayerMask: CAShapeLayer?
-
+    
     /// :nodoc:
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        
-        if (self.slantedLayerMask != nil) {
-            let bezierPath = UIBezierPath()
-            bezierPath.cgPath = self.slantedLayerMask!.path!
-            let result = bezierPath.contains(point)
-            return result
+        guard let mask = self.slantedLayerMask else {
+            return super.point(inside: point, with: event)
         }
         
-        return  (super.point(inside: point, with: event))
+        let bezierPath = UIBezierPath()
+        bezierPath.cgPath = mask.path!
+        let result = bezierPath.contains(point)
+        return result
     }
     
     /// :nodoc:
     override open func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-        let attributes = layoutAttributes as! YBSlantedCollectionViewLayoutAttributes
-        super.apply(attributes)
-        self.slantedLayerMask = attributes.slantedLayerMask
-        self.layer.mask = attributes.slantedLayerMask
+        super.apply(layoutAttributes)
+        guard let layoutAttributes = layoutAttributes as? YBSlantedCollectionViewLayoutAttributes else {
+            return
+        }
+        self.slantedLayerMask = layoutAttributes.slantedLayerMask
+        self.layer.mask = layoutAttributes.slantedLayerMask
     }
 }
 
