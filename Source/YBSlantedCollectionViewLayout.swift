@@ -96,6 +96,14 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
     @objc open var slantingDirection: SlantingDirection = .upward
     
     /**
+     The scroll direction of the grid.
+     
+     The grid layout scrolls along one axis only, either horizontally or vertically.
+     The default value of this property is `UICollectionViewScrollDirectionVertical`.
+     */
+    open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical
+
+    /**
      Allows to disable the slanting for the first cell.
      
      Set it to `false` to disable the slanting for the first cell. By default, this property is set to `true`.
@@ -115,14 +123,6 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
      The spacing to use between two items. The default value of this property is 10.0.
      */
     @IBInspectable open var lineSpacing: CGFloat = 10
-
-    /**
-     The scroll direction of the grid.
-     
-     The grid layout scrolls along one axis only, either horizontally or vertically. 
-     The default value of this property is `UICollectionViewScrollDirectionVertical`.
-     */
-    open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical
     
     /**
      The item size options
@@ -189,13 +189,17 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
         return slantedLayerMask
     }
     
-    //MARK: CollectionViewLayout methods overriding
+}
+
+//MARK: CollectionViewLayout methods overriding
+extension YBSlantedCollectionViewLayout {
+    
     /// :nodoc:
     override open var collectionViewContentSize : CGSize {
         let contentSize = CGFloat(numberOfItems) * (size + lineSpacing - CGFloat(slantingDelta)) - lineSpacing + CGFloat(slantingDelta)
         return scrollDirection.isVertical ? CGSize(width: width, height: contentSize) : CGSize(width: contentSize, height: height)
     }
-
+    
     /// :nodoc:
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true;
@@ -206,7 +210,7 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
         cached = [YBSlantedCollectionViewLayoutAttributes]()
         
         var position: CGFloat = 0
-                
+        
         for item in 0..<numberOfItems {
             let indexPath = IndexPath(item: item, section: 0)
             let attributes = YBSlantedCollectionViewLayoutAttributes(forCellWith: indexPath)
@@ -244,4 +248,5 @@ public struct YBSlantedCollectionViewLayoutSizeOptions {
     override open func layoutAttributesForItem(at indexPath: IndexPath) -> YBSlantedCollectionViewLayoutAttributes? {
         return cached[indexPath.item]
     }
+
 }
