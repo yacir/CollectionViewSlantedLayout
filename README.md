@@ -67,39 +67,88 @@ Find a demo in the Examples folder.
 
 ## Properties
 
-CollectionViewSlantedLayout contains six properties to customize the interface.
+- **slantingSize**:
 
-```swift
-var slantingDelta: UInt
-var slantingDirection: SlantingDirection
-var firstCellSlantingEnabled: Bool
-var lastCellSlantingEnabled: Bool
-var lineSpacing: CGFloat
-var scrollDirection: UICollectionViewScrollDirection
-var itemSize: CGFloat
-```
+	```swift
+	@IBInspectable var slantingSize: UInt
+	```
+	The slanting size. The default value of this property is `75`.
 
-- _slantingDelta_ is the slanting delta.  Defaults to `75`
-- _slantingDirection_ allows to set slanting direction. Defaults to `.upward`
-- _firstCellSlantingEnabled_ allows to enable the slanting for the first cell. By default, this property is set to `true`
-- _lastCellSlantingEnabled_ allows to enable the slanting for the last cell. By default, this property is set to `true`
-- _lineSpacing_ is the spacing to use between two items. Defaults to `10.0`
-- _scrollDirection_ is the scroll direction. Defaults to `.vertical`
-- _itemSize_ allows to set the item's defaulf width/height depending on the scroll direction if the delegate does not implement the collectionView(_:layout:sizeForItemAt:) method. Defaults to `225`
+- **slantingDirection**:
+	
+	```swift
+	var slantingDirection: SlantingDirection
+	```
+	The slanting direction. The default value of this property is `upward`.
+	
+- **slantingAngle**:
 
+	```swift
+	fileprivate(set) var slantingAngle: CGFloat
+	```
+	The angle, in radians, of the slanting. The value of this property could be used to apply a rotation transform on the cell's contentView in the `collectionView(_:cellForItemAt:)` method implementation.
+	     
+	```swift
+	if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+		cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
+	}
+	```
+- **scrollDirection**:
+	
+	```swift
+	var scrollDirection: UICollectionViewScrollDirection
+	```
+	The scroll direction of the grid. The grid layout scrolls along one axis only, either horizontally or vertically. The default value of this property is `vertical`.
+	
+- **isFistCellExcluded**:
+	
+	```swift
+	@IBInspectable var isFistCellExcluded: Bool
+	```
+	Allows to disable the slanting for the first cell. Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
+	
+- **isLastCellExcluded**:
+	
+	```swift
+	@IBInspectable var isLastCellExcluded: Bool
+	```
+	Allows to disable the slanting for the last cell. Set it to `true` to disable the slanting for the last cell. The default value of this property is `false`.
+	
+- **lineSpacing**:
+	
+	```swift
+	@IBInspectable var lineSpacing: CGFloat
+	```
+	The spacing to use between two items. The default value of this property is `10.0`.
+	
+- **itemSize**:
+	
+	```swift
+	@IBInspectable var itemSize: CGFloat
+	```
+	The default size to use for cells. If the delegate does not implement the `collectionView(_:layout:sizeForItemAt:)` method, the slanted layout uses the value in this property to set the size of each cell. This results in cells that all have the same size. The default value of this property is `225`.
+	
+- **zIndexOrder**:
+	
+	```swift
+	var zIndexOrder: ZIndexOrder
+	```
+	The zIndex order of the items in the layout. The default value of this property is `ascending`.
+
+	
 ## Protocols
 
-<details>
-  <summary>
-  ```swift
-		@IBInspectable open var slantingSize: UInt 
-  ``` 
-  </summary>
-  <p>
-	The slanting size. By default, this property is set to `75`.
-  </p>
-</details>
+The `CollectionViewDelegateSlantedLayout` protocol defines methods that let you coordinate with a `CollectionViewSlantedLayout` object to implement a slanted layout. The `CollectionViewDelegateSlantedLayout` protocol has the following methods:
 
+```swift
+optional func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: CollectionViewSlantedLayout,
+                             sizeForItemAt indexPath: IndexPath) -> CGFloat
+```
+
+This method asks the delegate for the size of the specified item’s cell.
+     
+If you do not implement this method, the slanted layout uses the values in its `itemSize` property to set the size of items instead. Your implementation of this method can return a fixed set of sizes or dynamically adjust the sizes based on the cell’s content.
 
 ## Author
 

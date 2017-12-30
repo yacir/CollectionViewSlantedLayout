@@ -83,9 +83,9 @@ of properties to work as designed.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingDelta"></a>
-                    <a name="//apple_ref/swift/Property/slantingDelta" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingDelta">slantingDelta</a>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingSize"></a>
+                    <a name="//apple_ref/swift/Property/slantingSize" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingSize">slantingSize</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -93,16 +93,16 @@ of properties to work as designed.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The slanting delta.</p>
+                        <p>The slanting size.</p>
 
-<p>By default, this property is set to <code>75</code>.</p>
+<p>The default value of this property is <code>75</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingDelta</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="mi">75</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingSize</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="mi">75</span></code></pre>
 
                         </div>
                       </div>
@@ -122,7 +122,7 @@ of properties to work as designed.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The slanting direction direction.</p>
+                        <p>The slanting direction.</p>
 
 <p>The default value of this property is <code>upward</code>.</p>
 
@@ -188,14 +188,14 @@ of properties to work as designed.</p>
                         <p>The scroll direction of the grid.</p>
 
 <p>The grid layout scrolls along one axis only, either horizontally or vertically.
-The default value of this property is <code>UICollectionViewScrollDirectionVertical</code>.</p>
+The default value of this property is <code>vertical</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span> <span class="o">=</span> <span class="kt">UICollectionViewScrollDirection</span><span class="o">.</span><span class="n">vertical</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span></code></pre>
 
                         </div>
                       </div>
@@ -205,9 +205,9 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)firstCellSlantingEnabled"></a>
-                    <a name="//apple_ref/swift/Property/firstCellSlantingEnabled" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)firstCellSlantingEnabled">firstCellSlantingEnabled</a>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isFistCellExcluded"></a>
+                    <a name="//apple_ref/swift/Property/isFistCellExcluded" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isFistCellExcluded">isFistCellExcluded</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -217,14 +217,14 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                       <div class="abstract">
                         <p>Allows to disable the slanting for the first cell.</p>
 
-<p>Set it to <code>false</code> to disable the slanting for the first cell. By default, this property is set to <code>true</code>.</p>
+<p>Set it to <code>true</code> to disable the slanting for the first cell. The default value of this property is <code>false</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">firstCellSlantingEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isFistCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -234,9 +234,9 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)lastCellSlantingEnabled"></a>
-                    <a name="//apple_ref/swift/Property/lastCellSlantingEnabled" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)lastCellSlantingEnabled">lastCellSlantingEnabled</a>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isLastCellExcluded"></a>
+                    <a name="//apple_ref/swift/Property/isLastCellExcluded" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isLastCellExcluded">isLastCellExcluded</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -246,14 +246,14 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                       <div class="abstract">
                         <p>Allows to disable the slanting for the last cell.</p>
 
-<p>Set it to <code>false</code> to disable the slanting for the last cell. By default, this property is set to <code>true</code>.</p>
+<p>Set it to <code>true</code> to disable the slanting for the last cell. The default value of this property is <code>false</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">lastCellSlantingEnabled</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
 
                         </div>
                       </div>
@@ -275,7 +275,7 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                       <div class="abstract">
                         <p>The spacing to use between two items.</p>
 
-<p>The spacing to use between two items. The default value of this property is 10.0.</p>
+<p>The default value of this property is 10.0.</p>
 
                       </div>
                       <div class="declaration">
@@ -307,7 +307,7 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
 <p>If the delegate does not implement the <code>collectionView(_:layout:sizeForItemAt:)</code> method, the slanted layout
 uses the value in this property to set the size of each cell. This results in cells that all have the same size.</p>
 
-<p>The default size value is 225.</p>
+<p>The default value of this property is 225.</p>
 
                       </div>
                       <div class="declaration">
@@ -355,7 +355,7 @@ uses the value in this property to set the size of each cell. This results in ce
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2017-12-30)</p>
+          <p>&copy; 2017 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2017-12-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

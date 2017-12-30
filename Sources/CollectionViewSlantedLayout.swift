@@ -36,7 +36,7 @@ import UIKit;
     /**
      The slanting size.
      
-     By default, this property is set to `75`.
+     The default value of this property is `75`.
      */
     @IBInspectable open var slantingSize: UInt = 75 {
         didSet {
@@ -46,7 +46,7 @@ import UIKit;
     }
     
     /**
-     The slanting direction direction.
+     The slanting direction.
      
      The default value of this property is `upward`.
     */
@@ -75,9 +75,9 @@ import UIKit;
      The scroll direction of the grid.
      
      The grid layout scrolls along one axis only, either horizontally or vertically.
-     The default value of this property is `UICollectionViewScrollDirectionVertical`.
+     The default value of this property is `vertical`.
      */
-    @objc open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical{
+    @objc open var scrollDirection: UICollectionViewScrollDirection = .vertical{
         didSet {
             updateRotationAngle()
             invalidateLayout()
@@ -87,7 +87,7 @@ import UIKit;
     /**
      Allows to disable the slanting for the first cell.
      
-     Set it to `true` to disable the slanting for the first cell. By default, this property is set to `false`.
+     Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
      */
     @IBInspectable open var isFistCellExcluded: Bool = false  {
         didSet {
@@ -98,7 +98,7 @@ import UIKit;
     /**
      Allows to disable the slanting for the last cell.
      
-     Set it to `true` to disable the slanting for the last cell. By default, this property is set to `false`.
+     Set it to `true` to disable the slanting for the last cell. The default value of this property is `false`.
      */
     @IBInspectable open var isLastCellExcluded: Bool = false  {
         didSet {
@@ -109,7 +109,7 @@ import UIKit;
     /**
      The spacing to use between two items.
      
-     The spacing to use between two items. The default value of this property is 10.0.
+     The default value of this property is 10.0.
      */
     @IBInspectable open var lineSpacing: CGFloat = 10 {
         didSet {
@@ -123,7 +123,7 @@ import UIKit;
      If the delegate does not implement the `collectionView(_:layout:sizeForItemAt:)` method, the slanted layout
      uses the value in this property to set the size of each cell. This results in cells that all have the same size.
      
-     The default size value is 225.
+     The default value of this property is 225.
      */
     @IBInspectable open var itemSize: CGFloat = 225  {
         didSet {
