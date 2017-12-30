@@ -1,9 +1,9 @@
-# YBSlantedCollectionViewLayout
+# CollectionViewSlantedLayout
 
 [![Version](https://img.shields.io/cocoapods/v/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
 [![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
+[![Swift Version](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
 [![Build Status](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master)](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout)
 [![codecov](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout)
 [![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
@@ -20,7 +20,7 @@ YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing t
 
 ## Usage
 
-YBSlantedCollectionViewLayout contains six properties to customize the interface.
+CollectionViewSlantedLayout contains six properties to customize the interface.
 
 ```swift
 var slantingDelta: UInt
@@ -42,16 +42,16 @@ var itemSize: CGFloat
 
 ### Apply the slanting mask 
 
-To apply the slanting mask on the cellView, use the `YBSlantedCollectionViewCell` or subclass it.
+To apply the slanting mask on the cellView, use the `CollectionViewSlantedCell` or subclass it.
 
 ## Installation
 
 ### CocoaPods
-YBSlantedCollectionViewLayout is available through [CocoaPods](http://cocoapods.org). To install
+CollectionViewSlantedLayout is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 2.2'
+pod "YBSlantedCollectionViewLayout", '~> 3.0'
 ```
 
 ### Carthage

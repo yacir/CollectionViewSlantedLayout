@@ -1,7 +1,10 @@
-# YBSlantedCollectionViewLayout CHANGELOG
+# CollectionViewSlantedLayout CHANGELOG
 
 ## 3.0
 * Swift 4.0 version
+* Replace the `YBSlantedCollectionViewLayout` with `CollectionViewSlantedLayout`
+* Replace the `YBSlantedCollectionViewCell` with `CollectionViewSlantedCell`
+
 
 #### Added
 * Add the `slantingDirection` property

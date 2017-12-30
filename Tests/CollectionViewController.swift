@@ -1,7 +1,7 @@
 
 //
 //  CollectionViewController.swift
-//  YBSlantedCollectionViewLayout
+//  CollectionViewSlantedLayout
 //
 //  Created by Yassir Barchi on 23/03/2016.
 //  Copyright © 2016 Yassir Barchi. All rights reserved.
@@ -9,7 +9,7 @@
 
 import UIKit
 
-@testable import YBSlantedCollectionViewLayout
+@testable import CollectionViewSlantedLayout
 
 private let reuseIdentifier = "Cell"
 
@@ -21,7 +21,7 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView!.register(YBSlantedCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(CollectionViewSlantedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     // MARK: UICollectionViewDataSource
@@ -45,7 +45,7 @@ class CollectionViewController: UICollectionViewController {
 
 extension CollectionViewController: CollectionViewDelegateSlantedLayout {
     func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: YBSlantedCollectionViewLayout,
+                        layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
         return itemSize ?? collectionViewLayout.itemSize
     }
