@@ -1,21 +1,19 @@
 # CollectionViewSlantedLayout
 
-[![Version](https://img.shields.io/cocoapods/v/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
+[![Version](https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
 [![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Version](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
-[![Build Status](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master)](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout)
-[![codecov](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout)
-[![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
-[![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
+[![Build Status](https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master)](https://travis-ci.org/yacir/CollectionViewSlantedLayout)
+[![codecov](https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/CollectionViewSlantedLayout)
+[![Platform](https://img.shields.io/cocoapods/p/CollectionViewSlantedLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
+[![License](https://img.shields.io/cocoapods/l/CollectionViewSlantedLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
 
 ## Overview
-YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
-
-## [Live Demo](https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g)
+CollectionViewSlantedLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
 
 <p align="center">
-  	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout"> 
+  	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
 </p>
 
 ## Usage
@@ -51,7 +49,7 @@ CollectionViewSlantedLayout is available through [CocoaPods](http://cocoapods.or
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 3.0'
+pod "CollectionViewSlantedLayout", '~> 3.0'
 ```
 
 ### Carthage
@@ -59,7 +57,7 @@ pod "YBSlantedCollectionViewLayout", '~> 3.0'
 You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
 
 ```terminal
-github 'yacir/YBSlantedCollectionViewLayout'
+github 'yacir/CollectionViewSlantedLayout'
 ```
 
 ## Roadmap
@@ -81,4 +79,4 @@ This framework is inspired by [this prototype](https://dribbble.com/shots/172759
 
 ## License
 
-YBSlantedCollectionViewLayout is available under the MIT license. See the LICENSE file for more info.
+CollectionViewSlantedLayout is available under the MIT license. See the LICENSE file for more info.
