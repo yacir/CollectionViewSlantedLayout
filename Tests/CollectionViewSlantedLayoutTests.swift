@@ -22,7 +22,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         verticalSlantedViewLayout = CollectionViewSlantedLayout()
         verticalSlantedViewLayout.itemSize = 225
-        verticalSlantedViewLayout.slantingDelta = 50
+        verticalSlantedViewLayout.slantingSize = 50
         verticalSlantedViewLayout.lineSpacing = 0
         
         collectionViewController = CollectionViewController(collectionViewLayout: verticalSlantedViewLayout)
@@ -42,7 +42,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
     
     func testSlantedViewLayoutHasDefaultValues() {
         let defaultSlantedViewLayout = CollectionViewSlantedLayout()
-        XCTAssertEqual(defaultSlantedViewLayout.slantingDelta, 75)
+        XCTAssertEqual(defaultSlantedViewLayout.slantingSize, 75)
         XCTAssertEqual(defaultSlantedViewLayout.slantingDirection, .upward)
         XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.isLastCellExcluded, false)
@@ -62,7 +62,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         
         let size = collectionViewController.itemSize
         let lineSpicing = verticalSlantedViewLayout.lineSpacing
-        let slantingDelta = CGFloat(verticalSlantedViewLayout.slantingDelta)
+        let slantingDelta = CGFloat(verticalSlantedViewLayout.slantingSize)
         
         let contentSize = CGFloat(collectionViewController.items.count) * (size! - slantingDelta + lineSpicing ) + slantingDelta - lineSpicing
         XCTAssertEqual(verticalSlantedViewLayoutSize.width, collectionViewControllerSize.width)
@@ -78,7 +78,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         
         let size = horizontalSlantedViewLayout.itemSize
         let lineSpicing = horizontalSlantedViewLayout.lineSpacing
-        let slantingDelta = CGFloat(horizontalSlantedViewLayout.slantingDelta)
+        let slantingDelta = CGFloat(horizontalSlantedViewLayout.slantingSize)
         
         let contentSize = CGFloat(horizontalCollectionViewController.items.count) * (size - slantingDelta + lineSpicing ) + slantingDelta - lineSpicing
         XCTAssertEqual(horizontalSlantedViewLayoutSize.width, contentSize)
@@ -95,7 +95,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         
         let size = verticalSlantedViewLayout.itemSize
         let lineSpicing = verticalSlantedViewLayout.lineSpacing
-        let slantingDelta = CGFloat(verticalSlantedViewLayout.slantingDelta)
+        let slantingDelta = CGFloat(verticalSlantedViewLayout.slantingSize)
         
         let contentSize = CGFloat(collectionViewController.items.count) * (size - slantingDelta + lineSpicing ) + slantingDelta - lineSpicing
         XCTAssertEqual(verticalSlantedViewLayoutSize.width, collectionViewControllerSize.width)
@@ -131,7 +131,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
 
         let layout = CollectionViewSlantedLayout()
         collectionView.collectionViewLayout = layout
-        layout.slantingDelta = 150
+        layout.slantingSize = 150
         XCTAssertEqual(layout.slantingAngle, -0.5)
         
         layout.slantingDirection = .downward

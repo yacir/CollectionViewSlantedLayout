@@ -20,7 +20,7 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var scrollDirectionSegment: UISegmentedControl!
     @IBOutlet weak var firstCellSlantingSwitch: UISwitch!
     @IBOutlet weak var lastCellSlantingSwitch: UISwitch!
-    @IBOutlet weak var slantingDeltaSlider: UISlider!
+    @IBOutlet weak var slantingSizeSlider: UISlider!
     @IBOutlet weak var lineSpacingSlider: UISlider!
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class SettingsController: UITableViewController {
         self.scrollDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.scrollDirection == .horizontal) ? 0 : 1
         self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.isFistCellExcluded
         self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.isLastCellExcluded
-        self.slantingDeltaSlider.value = Float(self.collectionViewLayout.slantingDelta)
+        self.slantingSizeSlider.value = Float(self.collectionViewLayout.slantingSize)
         self.lineSpacingSlider.value = Float(self.collectionViewLayout.lineSpacing)
         
         UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.slide)
@@ -60,8 +60,8 @@ class SettingsController: UITableViewController {
         self.collectionViewLayout.isLastCellExcluded = sender.isOn
     }
     
-    @IBAction func slantingDeltaChanged(_ sender: UISlider) {
-        self.collectionViewLayout.slantingDelta = UInt(sender.value)
+    @IBAction func slantingSizeChanged(_ sender: UISlider) {
+        self.collectionViewLayout.slantingSize = UInt(sender.value)
     }
     
     @IBAction func lineSpacingChanged(_ sender: UISlider) {

@@ -1,23 +1,10 @@
 # CollectionViewSlantedLayout CHANGELOG
 
-## 3.0
+## 3.0 (12/30/2017)
+The CollectionViewSlantedLayout 3.0 version introduce a full new APIs and remove all the old ones. Check the Migration Guide.
+
+* Initial 3.0.0 Release
 * Swift 4.0 version
-* Replace the `YBSlantedCollectionViewLayout` with `CollectionViewSlantedLayout`
-* Replace the `YBSlantedCollectionViewCell` with `CollectionViewSlantedCell`
-
-#### Added
-* Add the `slantingDirection` property
-* Add the `itemSize` property
-* Add the `slantingAngle` property
-* Introduce the `CollectionViewDelegateSlantedLayout` delegate.
-* Add the `isFistCellExcluded` instead of `firstCellSlantingEnabled`
-* Add the `isLastCellExcluded` instead of `lastCellSlantingEnabled`
-
-#### removed
-* Remove the `reverseSlantingAngle` property
-* Remove the `firstCellSlantingEnabled` property
-* Remove the `lastCellSlantingEnabled` property
-* Remove the `itemSizeOptions` property and the `YBSlantedCollectionViewLayoutSizeOptions` struct.
 
 ## 2.2.0
 * Swift 3.0 version

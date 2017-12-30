@@ -236,7 +236,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Slanting delta" id="Hkn-Bi-oR6">
+                            <tableViewSection headerTitle="Slanting size" id="Hkn-Bi-oR6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="T7k-ty-6Be">
                                         <rect key="frame" x="0.0" y="300" width="375" height="50"/>
@@ -248,7 +248,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="76" minValue="0.0" maxValue="100" id="ZU8-Nc-vzt">
                                                     <rect key="frame" x="14" y="9" width="347" height="32"/>
                                                     <connections>
-                                                        <action selector="slantingDeltaChanged:" destination="dL7-SW-xMJ" eventType="valueChanged" id="bwE-yB-sdf"/>
+                                                        <action selector="slantingSizeChanged:" destination="dL7-SW-xMJ" eventType="valueChanged" id="jti-tz-cln"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
@@ -298,8 +298,8 @@
                         <outlet property="lastCellSlantingSwitch" destination="caq-1w-tCK" id="aBy-SL-hik"/>
                         <outlet property="lineSpacingSlider" destination="XOB-eJ-buD" id="ZBn-o7-4sI"/>
                         <outlet property="scrollDirectionSegment" destination="74g-Kn-vhe" id="0yn-XF-oc2"/>
-                        <outlet property="slantingDeltaSlider" destination="ZU8-Nc-vzt" id="YG9-Jd-3m6"/>
                         <outlet property="slantingDirectionSegment" destination="McT-Od-SM0" id="uXz-nF-iGK"/>
+                        <outlet property="slantingSizeSlider" destination="ZU8-Nc-vzt" id="kOm-vD-JjT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tg0-jJ-BDW" userLabel="First Responder" sceneMemberID="firstResponder"/>

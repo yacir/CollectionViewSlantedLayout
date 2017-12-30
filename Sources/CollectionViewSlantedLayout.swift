@@ -34,11 +34,11 @@ import UIKit;
 @objc open class CollectionViewSlantedLayout: UICollectionViewLayout {
 
     /**
-     The slanting delta.
+     The slanting size.
      
      By default, this property is set to `75`.
      */
-    @IBInspectable open var slantingDelta: UInt = 75 {
+    @IBInspectable open var slantingSize: UInt = 75 {
         didSet {
             updateRotationAngle()
             invalidateLayout()
@@ -172,15 +172,15 @@ import UIKit;
             switch self.slantingDirection {
             case .downward:
                 bezierPath.move(to: CGPoint.init(x: 0, y: 0))
-                bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta)))
+                bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingSize)))
                 bezierPath.addLine(to: CGPoint.init(x: width, y: size))
-                bezierPath.addLine(to: CGPoint.init(x: 0, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta)))
+                bezierPath.addLine(to: CGPoint.init(x: 0, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingSize)))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: 0))
             default:
-                let startPoint = CGPoint.init(x: 0, y: disableSlantingForTheFirstCell ? 0 : CGFloat(self.slantingDelta))
+                let startPoint = CGPoint.init(x: 0, y: disableSlantingForTheFirstCell ? 0 : CGFloat(self.slantingSize))
                 bezierPath.move(to: startPoint)
                 bezierPath.addLine(to: CGPoint.init(x: width, y: 0))
-                bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta)))
+                bezierPath.addLine(to: CGPoint.init(x: width, y: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingSize)))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: size))
                 bezierPath.addLine(to: startPoint)
             }
@@ -188,17 +188,17 @@ import UIKit;
         else {
             switch self.slantingDirection {
             case .upward:
-                let startPoint = CGPoint.init(x: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta), y: 0)
+                let startPoint = CGPoint.init(x: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingSize), y: 0)
                 bezierPath.move(to: startPoint)
                 bezierPath.addLine(to: CGPoint.init(x: size, y: 0))
-                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta), y: height))
+                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingSize), y: height))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: height))
                 bezierPath.addLine(to: startPoint)
             default:
                 bezierPath.move(to: CGPoint.init(x: 0, y: 0))
-                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingDelta), y: 0))
+                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstLastCell ? size : size-CGFloat(slantingSize), y: 0))
                 bezierPath.addLine(to: CGPoint.init(x: size, y: height))
-                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingDelta), y: height))
+                bezierPath.addLine(to: CGPoint.init(x: disableSlantingForTheFirstCell ? 0 : CGFloat(slantingSize), y: height))
                 bezierPath.addLine(to: CGPoint.init(x: 0, y: 0))
             }
         }
@@ -210,7 +210,7 @@ import UIKit;
     
     /// :nodoc:
     fileprivate func updateRotationAngle() {
-        let oppositeSide = CGFloat(slantingDelta)
+        let oppositeSide = CGFloat(slantingSize)
         var factor = slantingDirection == .upward ? -1 : 1
         var adjacentSide = width
         
@@ -229,7 +229,7 @@ extension CollectionViewSlantedLayout {
     
     /// :nodoc:
     override open var collectionViewContentSize : CGSize {
-        let contentSize = CGFloat(numberOfItems - 1) * (lineSpacing - CGFloat(slantingDelta)) + cachedContentSize
+        let contentSize = CGFloat(numberOfItems - 1) * (lineSpacing - CGFloat(slantingSize)) + cachedContentSize
         return scrollDirection.isVertical ? CGSize(width: width, height: contentSize) : CGSize(width: contentSize, height: height)
     }
     
@@ -268,7 +268,7 @@ extension CollectionViewSlantedLayout {
             cachedAttributes.append(attributes)
             cachedContentSize += size
             
-            position += size + lineSpacing - CGFloat(slantingDelta)
+            position += size + lineSpacing - CGFloat(slantingSize)
         }
     }
     
