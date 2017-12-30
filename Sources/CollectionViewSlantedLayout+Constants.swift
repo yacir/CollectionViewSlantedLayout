@@ -55,10 +55,5 @@ import Foundation
     internal var isAscending: Bool {
         return self == .ascending
     }
-    
-    /// :nodoc:
-    internal var isDescending: Bool {
-        return self == .descending
-    }
 }
 

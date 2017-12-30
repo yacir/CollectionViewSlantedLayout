@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  YBSlantedCollectionViewLayoutSample
+//  CollectionViewSlantedLayoutDemo
 //
 //  Created by Yassir Barchi on 28/02/2016.
 //  Copyright © 2016 Yassir Barchi. All rights reserved.

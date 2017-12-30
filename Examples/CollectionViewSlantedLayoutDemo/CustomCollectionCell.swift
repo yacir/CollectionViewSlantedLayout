@@ -10,12 +10,12 @@ import Foundation
 
 import UIKit
 
-import YBSlantedCollectionViewLayout
+import CollectionViewSlantedLayout
 
 let yOffsetSpeed: CGFloat = 150.0
 let xOffsetSpeed: CGFloat = 100.0
 
-class CustomCollectionCell: YBSlantedCollectionViewCell {
+class CustomCollectionCell: CollectionViewSlantedCell {
     
     @IBOutlet weak var imageView: UIImageView!
     

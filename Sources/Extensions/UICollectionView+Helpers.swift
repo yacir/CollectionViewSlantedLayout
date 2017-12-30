@@ -29,8 +29,4 @@ extension UICollectionViewScrollDirection {
     var isVertical: Bool {
         return self == .vertical
     }
-    
-    var isHorizontal: Bool {
-        return self == .horizontal
-    }
 }

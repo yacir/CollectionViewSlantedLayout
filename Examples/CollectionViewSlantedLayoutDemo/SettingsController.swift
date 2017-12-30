@@ -1,6 +1,6 @@
 //
 //  SettingsController.swift
-//  YBSlantedCollectionViewLayoutSample
+//  CollectionViewSlantedLayoutDemo
 //
 //  Created by Yassir Barchi on 28/02/2016.
 //  Copyright © 2016 Yassir Barchi. All rights reserved.
@@ -10,11 +10,11 @@ import Foundation
 
 import UIKit
 
-import YBSlantedCollectionViewLayout
+import CollectionViewSlantedLayout
 
 class SettingsController: UITableViewController {
     
-    weak var collectionViewLayout: YBSlantedCollectionViewLayout!
+    weak var collectionViewLayout: CollectionViewSlantedLayout!
     
     @IBOutlet weak var slantingDirectionSegment: UISegmentedControl!
     @IBOutlet weak var firstCellSlantingSwitch: UISwitch!

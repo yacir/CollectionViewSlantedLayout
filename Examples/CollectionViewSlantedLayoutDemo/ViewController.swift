@@ -8,7 +8,7 @@
 
 import UIKit
 
-import YBSlantedCollectionViewLayout
+import CollectionViewSlantedLayout
 
 class ViewController: UIViewController {
 
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 
             let settingsController = navigation.viewControllers[0] as! SettingsController
             
-            let layout = collectionView.collectionViewLayout as! YBSlantedCollectionViewLayout
+            let layout = collectionView.collectionViewLayout as! CollectionViewSlantedLayout
             settingsController.collectionViewLayout = layout
         }
     }
@@ -88,7 +88,7 @@ extension ViewController: CollectionViewDelegateSlantedLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: YBSlantedCollectionViewLayout,
+                        layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
         return collectionViewLayout.scrollDirection == .vertical ? 225 : 325
     }
