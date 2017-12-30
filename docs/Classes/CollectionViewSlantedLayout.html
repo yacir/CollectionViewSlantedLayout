@@ -15,7 +15,7 @@
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">CollectionViewSlantedLayout Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/yacir/YBSlantedCollectionViewLayout"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="https://github.com/yacir/CollectionViewSlantedLayout"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -132,6 +132,40 @@ of properties to work as designed.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingDirection</span><span class="p">:</span> <span class="kt"><a href="../Enums/SlantingDirection.html">SlantingDirection</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">upward</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingAngle"></a>
+                    <a name="//apple_ref/swift/Property/slantingAngle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingAngle">slantingAngle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The angle, in radians, of the slanting.</p>
+
+<p>The value of this property could be used to apply a rotation transform on the cell&rsquo;s contentView in the
+<code>collectionView(_:cellForItemAt:)</code> method implementation.</p>
+<pre class="highlight plaintext"><code>if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+   cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
+}
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">slantingAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
@@ -270,7 +304,7 @@ The default value of this property is <code>UICollectionViewScrollDirectionVerti
                       <div class="abstract">
                         <p>The default size to use for cells.</p>
 
-<p>If the delegate does not implement the collectionView(_:layout:sizeForItemAt:) method, the slanted layout
+<p>If the delegate does not implement the <code>collectionView(_:layout:sizeForItemAt:)</code> method, the slanted layout
 uses the value in this property to set the size of each cell. This results in cells that all have the same size.</p>
 
 <p>The default size value is 225.</p>

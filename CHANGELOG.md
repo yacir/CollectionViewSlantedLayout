@@ -9,6 +9,7 @@
 #### Added
 * Add the `slantingDirection` property
 * Add the `itemSize` property
+* Add the `slantingAngle` property
 * Introduce the `CollectionViewDelegateSlantedLayout` delegate.
 
 #### removed

@@ -1,5 +1,5 @@
 PODS:
-  - CollectionViewSlantedLayout (3.0)
+  - CollectionViewSlantedLayout (3.0.0)
 
 DEPENDENCIES:
   - CollectionViewSlantedLayout (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CollectionViewSlantedLayout: 00da10dc89f4ca99e0d5b0ab080c837b1eb8bd53
+  CollectionViewSlantedLayout: 07ae5f0c6e82129c967e7c3606f5f39213999eb5
 
 PODFILE CHECKSUM: bf4b53868714c919a28bd891dba088bd12bd7918
 

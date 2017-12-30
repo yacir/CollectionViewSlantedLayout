@@ -34,6 +34,8 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         horizontalSlantedViewLayout.itemSize = 300
         horizontalSlantedViewLayout.slantingDirection = .downward
         horizontalSlantedViewLayout.zIndexOrder = .descending
+        horizontalSlantedViewLayout.firstCellSlantingEnabled = false
+        horizontalSlantedViewLayout.lastCellSlantingEnabled = false
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
     }
@@ -121,6 +123,27 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         let secondItemZIndex = horizontalSlantedViewLayout.layoutAttributesForItem(at: secondItemIndexPath)?.zIndex
         XCTAssertTrue(firstItemZIndex! > secondItemZIndex!)
     }
+    
+    func testThatSlantingAngleIsWellCalculated() {
+
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 300, height: 600),
+                                              collectionViewLayout: verticalSlantedViewLayout)
+
+        let layout = CollectionViewSlantedLayout()
+        collectionView.collectionViewLayout = layout
+        layout.slantingDelta = 150
+        XCTAssertEqual(layout.slantingAngle, -0.5)
+        
+        layout.slantingDirection = .downward
+        XCTAssertEqual(layout.slantingAngle, 0.5)
+
+        layout.scrollDirection = .horizontal
+        XCTAssertEqual(layout.slantingAngle, -0.25)
+
+        layout.slantingDirection = .upward
+        XCTAssertEqual(layout.slantingAngle, 0.25)
+    }
+
     
     func testLayoutHasSmoothScrolling() {
         let proposedOffset = verticalSlantedViewLayout.targetContentOffset(forProposedContentOffset: CGPoint(),

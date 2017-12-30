@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView.reloadData()
-        UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.slide)
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -46,22 +46,13 @@ class ViewController: UIViewController {
         return UIStatusBarAnimation.slide
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-            
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSettings" {
-            let navigation = segue.destination as! UINavigationController
-
-            let settingsController = navigation.viewControllers[0] as! SettingsController
-            
+            let settingsController = segue.destination as! SettingsController            
             let layout = collectionView.collectionViewLayout as! CollectionViewSlantedLayout
             settingsController.collectionViewLayout = layout
         }
     }
-
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -76,6 +67,10 @@ extension ViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionCell
             
             cell.image = images[indexPath.row]
+
+            if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+                cell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+            }
 
             return cell
     }

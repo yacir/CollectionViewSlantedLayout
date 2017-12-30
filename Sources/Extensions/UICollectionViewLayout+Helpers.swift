@@ -31,10 +31,17 @@ extension UICollectionViewLayout {
     }
     
     var width: CGFloat {
-        return collectionView!.frame.width-collectionView!.contentInset.left-collectionView!.contentInset.right
+        guard let collectionView = collectionView else {
+            return 0
+        }
+        return collectionView.frame.width - collectionView.contentInset.left - collectionView.contentInset.right
     }
     
     var height: CGFloat {
-        return collectionView!.frame.height-collectionView!.contentInset.top-collectionView!.contentInset.bottom
+        guard let collectionView = collectionView else {
+            return 0
+        }
+
+        return collectionView.frame.height - collectionView.contentInset.top - collectionView.contentInset.bottom
     }
 }

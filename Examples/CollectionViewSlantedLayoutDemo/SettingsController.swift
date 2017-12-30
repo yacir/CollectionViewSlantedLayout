@@ -17,9 +17,9 @@ class SettingsController: UITableViewController {
     weak var collectionViewLayout: CollectionViewSlantedLayout!
     
     @IBOutlet weak var slantingDirectionSegment: UISegmentedControl!
+    @IBOutlet weak var scrollDirectionSegment: UISegmentedControl!
     @IBOutlet weak var firstCellSlantingSwitch: UISwitch!
     @IBOutlet weak var lastCellSlantingSwitch: UISwitch!
-    @IBOutlet weak var scrollDirectionSwitch: UISwitch!
     @IBOutlet weak var slantingDeltaSlider: UISlider!
     @IBOutlet weak var lineSpacingSlider: UISlider!
     
@@ -27,15 +27,13 @@ class SettingsController: UITableViewController {
         super.viewDidLoad()
         
         self.slantingDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.slantingDirection == .downward) ? 0 : 1
+        self.scrollDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.scrollDirection == .horizontal) ? 0 : 1
         self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.firstCellSlantingEnabled
         self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.lastCellSlantingEnabled
-        self.scrollDirectionSwitch.isOn = self.collectionViewLayout.scrollDirection == UICollectionViewScrollDirection.horizontal
         self.slantingDeltaSlider.value = Float(self.collectionViewLayout.slantingDelta)
         self.lineSpacingSlider.value = Float(self.collectionViewLayout.lineSpacing)
         
-        
         UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.slide)
-        
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -50,6 +48,10 @@ class SettingsController: UITableViewController {
         self.collectionViewLayout.slantingDirection = (sender.selectedSegmentIndex == 0 ? .downward : .upward )
     }
     
+    @IBAction func scrollDirectionChanged(_ sender: UISegmentedControl) {
+        self.collectionViewLayout.scrollDirection = (sender.selectedSegmentIndex == 0 ? .horizontal : .vertical)
+    }
+
     @IBAction func firstCellSlantingSwitchChanged(_ sender: UISwitch) {
         self.collectionViewLayout.firstCellSlantingEnabled = sender.isOn
     }
@@ -57,17 +59,6 @@ class SettingsController: UITableViewController {
     @IBAction func lastCellSlantingSwitchChanged(_ sender: UISwitch) {
         self.collectionViewLayout.lastCellSlantingEnabled = sender.isOn
     }
-    
-    @IBAction func scrollDirectionChanged(_ sender: UISwitch) {
-        if sender.isOn {
-            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
-        }
-        else {
-            self.collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.vertical
-        }
-        self.collectionViewLayout.collectionView?.reloadData()
-    }
-    
     
     @IBAction func slantingDeltaChanged(_ sender: UISlider) {
         self.collectionViewLayout.slantingDelta = UInt(sender.value)

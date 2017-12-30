@@ -38,14 +38,38 @@ import UIKit;
      
      By default, this property is set to `75`.
      */
-    @IBInspectable open var slantingDelta: UInt = 75
+    @IBInspectable open var slantingDelta: UInt = 75 {
+        didSet {
+            updateRotationAngle()
+            invalidateLayout()
+        }
+    }
     
     /**
      The slanting direction direction.
      
      The default value of this property is `upward`.
     */
-    @objc open var slantingDirection: SlantingDirection = .upward
+    @objc open var slantingDirection: SlantingDirection = .upward {
+        didSet {
+            updateRotationAngle()
+            invalidateLayout()
+        }
+    }
+    
+    /**
+     The angle, in radians, of the slanting.
+     
+     The value of this property could be used to apply a rotation transform on the cell's contentView in the
+     `collectionView(_:cellForItemAt:)` method implementation.
+     
+     ```
+     if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+        cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
+     }
+     ```
+     */
+    @objc open fileprivate(set) var slantingAngle: CGFloat = 0
     
     /**
      The scroll direction of the grid.
@@ -53,45 +77,70 @@ import UIKit;
      The grid layout scrolls along one axis only, either horizontally or vertically.
      The default value of this property is `UICollectionViewScrollDirectionVertical`.
      */
-    @objc open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical
+    @objc open var scrollDirection: UICollectionViewScrollDirection = UICollectionViewScrollDirection.vertical{
+        didSet {
+            updateRotationAngle()
+            invalidateLayout()
+        }
+    }
 
     /**
      Allows to disable the slanting for the first cell.
      
      Set it to `false` to disable the slanting for the first cell. By default, this property is set to `true`.
      */
-    @IBInspectable open var firstCellSlantingEnabled: Bool = true
+    @IBInspectable open var firstCellSlantingEnabled: Bool = true  {
+        didSet {
+            invalidateLayout()
+        }
+    }
 
     /**
      Allows to disable the slanting for the last cell.
      
      Set it to `false` to disable the slanting for the last cell. By default, this property is set to `true`.
      */
-    @IBInspectable open var lastCellSlantingEnabled: Bool = true
+    @IBInspectable open var lastCellSlantingEnabled: Bool = true  {
+        didSet {
+            invalidateLayout()
+        }
+    }
     
     /**
      The spacing to use between two items.
      
      The spacing to use between two items. The default value of this property is 10.0.
      */
-    @IBInspectable open var lineSpacing: CGFloat = 10
+    @IBInspectable open var lineSpacing: CGFloat = 10 {
+        didSet {
+            invalidateLayout()
+        }
+    }
     
     /**
      The default size to use for cells.
      
-     If the delegate does not implement the collectionView(_:layout:sizeForItemAt:) method, the slanted layout
+     If the delegate does not implement the `collectionView(_:layout:sizeForItemAt:)` method, the slanted layout
      uses the value in this property to set the size of each cell. This results in cells that all have the same size.
      
      The default size value is 225.
      */
-    @IBInspectable open var itemSize: CGFloat = 225
+    @IBInspectable open var itemSize: CGFloat = 225  {
+        didSet {
+            invalidateLayout()
+        }
+    }
 
     /**
      The zIndex order of the items in the layout.
      
      The default value of this property is `ascending`.
      */
-    @objc open var zIndexOrder: ZIndexOrder = .ascending
+    @objc open var zIndexOrder: ZIndexOrder = .ascending {
+        didSet {
+            invalidateLayout()
+        }
+    }
     
     //MARK: Private
     // :nodoc:
@@ -158,6 +207,21 @@ import UIKit;
         slantedLayerMask.path = bezierPath.cgPath
         return slantedLayerMask
     }
+    
+    /// :nodoc:
+    fileprivate func updateRotationAngle() {
+        let oppositeSide = CGFloat(slantingDelta)
+        var factor = slantingDirection == .upward ? -1 : 1
+        var adjacentSide = width
+        
+        if !scrollDirection.isVertical {
+            adjacentSide = height
+            factor *= -1
+        }
+        
+        let angle = atan(tan(oppositeSide / adjacentSide))
+        slantingAngle = angle * CGFloat(factor)
+    }
 }
 
 //MARK: CollectionViewLayout methods overriding
@@ -176,6 +240,7 @@ extension CollectionViewSlantedLayout {
     
     /// :nodoc:
     override open func prepare() {
+        updateRotationAngle()
         cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
         cachedContentSize = 0
         
@@ -200,7 +265,6 @@ extension CollectionViewSlantedLayout {
             attributes.zIndex = zIndexOrder.isAscending ? item : (numberOfItems - item)
             
             attributes.slantedLayerMask = self.maskForItemAtIndexPath(indexPath)
-            
             cachedAttributes.append(attributes)
             cachedContentSize += size
             
