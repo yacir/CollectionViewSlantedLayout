@@ -16,6 +16,7 @@
 		FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */; };
 		FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */; };
 		FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */; };
+		FBBBC5E71FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Helpers.swift"; sourceTree = "<group>"; };
+		FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateSlantedLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				FB6A0BF51FEC83380078E2DD /* Internal */,
 				FB132C611C910F5900728981 /* YBSlantedCollectionViewCell.swift */,
 				FB132C621C910F5900728981 /* YBSlantedCollectionViewLayout.swift */,
+				FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */,
 				FB132C671C910F6500728981 /* Supporting Files */,
 			);
 			path = Source;
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */,
+				FBBBC5E71FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift in Sources */,
 				FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */,
 				FB132C641C910F5900728981 /* YBSlantedCollectionViewCell.swift in Sources */,
 				FB132C651C910F5900728981 /* YBSlantedCollectionViewLayout.swift in Sources */,

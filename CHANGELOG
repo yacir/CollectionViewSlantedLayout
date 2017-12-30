@@ -5,9 +5,12 @@
 
 #### Added
 * Add the `slantingDirection` property
+* Add the `itemSize` property
+* Introduce the `CollectionViewDelegateSlantedLayout` delegate.
 
 #### removed
 * Remove the `reverseSlantingAngle` property
+* Remove the `itemSizeOptions` property and the `YBSlantedCollectionViewLayoutSizeOptions` struct.
 
 ## 2.2.0
 * Swift 3.0 version

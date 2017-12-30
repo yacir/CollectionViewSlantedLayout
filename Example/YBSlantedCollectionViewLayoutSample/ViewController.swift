@@ -81,10 +81,16 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension ViewController: CollectionViewDelegateSlantedLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: YBSlantedCollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
+        return collectionViewLayout.scrollDirection == .vertical ? 225 : 325
     }
 }
 

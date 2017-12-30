@@ -43,12 +43,15 @@
                                 <collectionViewLayout key="collectionViewLayout" id="mTM-Vp-4z9" customClass="YBSlantedCollectionViewLayout" customModule="YBSlantedCollectionViewLayout">
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="slantingDelta">
-                                            <integer key="value" value="50"/>
+                                            <integer key="value" value="76"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="firstCellSlantingEnabled" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="lastCellSlantingEnabled" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
                                             <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="itemSize">
+                                            <real key="value" value="227"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewLayout>
@@ -287,7 +290,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-Nc-vzt">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="76" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZU8-Nc-vzt">
                                                     <rect key="frame" x="14" y="10" width="272" height="31.5"/>
                                                     <connections>
                                                         <action selector="slantingDeltaChanged:" destination="dL7-SW-xMJ" eventType="valueChanged" id="bwE-yB-sdf"/>
@@ -313,7 +316,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="XOB-eJ-buD">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="XOB-eJ-buD">
                                                     <rect key="frame" x="6" y="10" width="288" height="31.5"/>
                                                     <connections>
                                                         <action selector="lineSpacingChanged:" destination="dL7-SW-xMJ" eventType="valueChanged" id="DEa-3e-FqW"/>

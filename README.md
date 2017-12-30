@@ -24,21 +24,21 @@ YBSlantedCollectionViewLayout contains six properties to customize the interface
 
 ```swift
 var slantingDelta: UInt
-var reverseSlantingAngle: Bool
+var slantingDirection: SlantingDirection
 var firstCellSlantingEnabled: Bool
 var lastCellSlantingEnabled: Bool
 var lineSpacing: CGFloat
 var scrollDirection: UICollectionViewScrollDirection
-var itemSizeOptions: YBSlantedCollectionViewLayoutSizeOptions
+var itemSize: CGFloat
 ```
 
-- _slantingDelta_ is the slanting delta.  Defaults to 50
-- _reverseSlantingAngle_ allows to reverse the slanting angle if the value is `true`. By default, this property is set to `false`
+- _slantingDelta_ is the slanting delta.  Defaults to `75`
+- _slantingDirection_ allows to set slanting direction. Defaults to `.upward`
 - _firstCellSlantingEnabled_ allows to enable the slanting for the first cell. By default, this property is set to `true`
 - _lastCellSlantingEnabled_ allows to enable the slanting for the last cell. By default, this property is set to `true`
-- _lineSpacing_ is the spacing to use between two items. Defaults to 10.0
-- _scrollDirection_ is the scroll direction. Defaults to `UICollectionViewScrollDirectionVertical`
-- _itemSizeOptions_ allows to set the item's width/height depending on the scroll direction.
+- _lineSpacing_ is the spacing to use between two items. Defaults to `10.0`
+- _scrollDirection_ is the scroll direction. Defaults to `.vertical`
+- _itemSize_ allows to set the item's defaulf width/height depending on the scroll direction if the delegate does not implement the collectionView(_:layout:sizeForItemAt:) method. Defaults to `225`
 
 ### Apply the slanting mask 
 
@@ -68,6 +68,7 @@ github 'yacir/YBSlantedCollectionViewLayout'
 - [x] Tests
 - [x] Swift 3 support
 - [x] Swift Package Manager support
+- [x] Use delegate method to implent dynamic items sizes.
 
 ## Author
 

@@ -16,7 +16,8 @@ private let reuseIdentifier = "Cell"
 class CollectionViewController: UICollectionViewController {
     
     var items = [Int]()
-    
+    var itemSize: CGFloat?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,6 @@ class CollectionViewController: UICollectionViewController {
         return 1
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -41,7 +41,14 @@ class CollectionViewController: UICollectionViewController {
         
         return cell
     }
-    
-    
 }
+
+extension CollectionViewController: CollectionViewDelegateSlantedLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: YBSlantedCollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
+        return itemSize ?? collectionViewLayout.itemSize
+    }
+}
+
 
