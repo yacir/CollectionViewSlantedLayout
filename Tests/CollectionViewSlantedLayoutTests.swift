@@ -34,8 +34,8 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         horizontalSlantedViewLayout.itemSize = 300
         horizontalSlantedViewLayout.slantingDirection = .downward
         horizontalSlantedViewLayout.zIndexOrder = .descending
-        horizontalSlantedViewLayout.firstCellSlantingEnabled = false
-        horizontalSlantedViewLayout.lastCellSlantingEnabled = false
+        horizontalSlantedViewLayout.isFistCellExcluded = true
+        horizontalSlantedViewLayout.isLastCellExcluded = true
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
     }
@@ -44,8 +44,8 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         let defaultSlantedViewLayout = CollectionViewSlantedLayout()
         XCTAssertEqual(defaultSlantedViewLayout.slantingDelta, 75)
         XCTAssertEqual(defaultSlantedViewLayout.slantingDirection, .upward)
-        XCTAssertEqual(defaultSlantedViewLayout.firstCellSlantingEnabled, true)
-        XCTAssertEqual(defaultSlantedViewLayout.lastCellSlantingEnabled, true)
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, false)
+        XCTAssertEqual(defaultSlantedViewLayout.isLastCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.lineSpacing, 10)
         XCTAssertEqual(defaultSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.vertical)
         XCTAssertEqual(defaultSlantedViewLayout.itemSize, 225)

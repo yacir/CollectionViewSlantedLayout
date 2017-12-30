@@ -28,8 +28,8 @@ class SettingsController: UITableViewController {
         
         self.slantingDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.slantingDirection == .downward) ? 0 : 1
         self.scrollDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.scrollDirection == .horizontal) ? 0 : 1
-        self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.firstCellSlantingEnabled
-        self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.lastCellSlantingEnabled
+        self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.isFistCellExcluded
+        self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.isLastCellExcluded
         self.slantingDeltaSlider.value = Float(self.collectionViewLayout.slantingDelta)
         self.lineSpacingSlider.value = Float(self.collectionViewLayout.lineSpacing)
         
@@ -53,11 +53,11 @@ class SettingsController: UITableViewController {
     }
 
     @IBAction func firstCellSlantingSwitchChanged(_ sender: UISwitch) {
-        self.collectionViewLayout.firstCellSlantingEnabled = sender.isOn
+        self.collectionViewLayout.isFistCellExcluded = sender.isOn
     }
     
     @IBAction func lastCellSlantingSwitchChanged(_ sender: UISwitch) {
-        self.collectionViewLayout.lastCellSlantingEnabled = sender.isOn
+        self.collectionViewLayout.isLastCellExcluded = sender.isOn
     }
     
     @IBAction func slantingDeltaChanged(_ sender: UISlider) {

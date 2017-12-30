@@ -83,13 +83,13 @@ import UIKit;
             invalidateLayout()
         }
     }
-
+    
     /**
      Allows to disable the slanting for the first cell.
      
-     Set it to `false` to disable the slanting for the first cell. By default, this property is set to `true`.
+     Set it to `true` to disable the slanting for the first cell. By default, this property is set to `false`.
      */
-    @IBInspectable open var firstCellSlantingEnabled: Bool = true  {
+    @IBInspectable open var isFistCellExcluded: Bool = false  {
         didSet {
             invalidateLayout()
         }
@@ -98,9 +98,9 @@ import UIKit;
     /**
      Allows to disable the slanting for the last cell.
      
-     Set it to `false` to disable the slanting for the last cell. By default, this property is set to `true`.
+     Set it to `true` to disable the slanting for the last cell. By default, this property is set to `false`.
      */
-    @IBInspectable open var lastCellSlantingEnabled: Bool = true  {
+    @IBInspectable open var isLastCellExcluded: Bool = false  {
         didSet {
             invalidateLayout()
         }
@@ -164,8 +164,8 @@ import UIKit;
         let slantedLayerMask = CAShapeLayer()
         let bezierPath = UIBezierPath()
         
-        let disableSlantingForTheFirstCell = indexPath.row == 0 && !firstCellSlantingEnabled;
-        let disableSlantingForTheFirstLastCell = indexPath.row == numberOfItems-1 && !lastCellSlantingEnabled;
+        let disableSlantingForTheFirstCell = indexPath.row == 0 && isFistCellExcluded;
+        let disableSlantingForTheFirstLastCell = indexPath.row == numberOfItems-1 && isLastCellExcluded;
         let size = itemSize(forItemAt: indexPath)
         
         if ( scrollDirection.isVertical ) {
