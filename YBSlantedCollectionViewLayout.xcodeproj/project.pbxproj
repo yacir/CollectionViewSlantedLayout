@@ -17,6 +17,7 @@
 		FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */; };
 		FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */; };
 		FBBBC5E71FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */; };
+		FBBBC5EE1FF7BC7B00A2AC04 /* CollectionViewSlantedLayout+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBC5ED1FF7BC7B00A2AC04 /* CollectionViewSlantedLayout+Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Helpers.swift"; sourceTree = "<group>"; };
 		FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegateSlantedLayout.swift; sourceTree = "<group>"; };
+		FBBBC5ED1FF7BC7B00A2AC04 /* CollectionViewSlantedLayout+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewSlantedLayout+Constants.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				FB132C611C910F5900728981 /* YBSlantedCollectionViewCell.swift */,
 				FB132C621C910F5900728981 /* YBSlantedCollectionViewLayout.swift */,
 				FBBBC5E61FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift */,
+				FBBBC5ED1FF7BC7B00A2AC04 /* CollectionViewSlantedLayout+Constants.swift */,
 				FB132C671C910F6500728981 /* Supporting Files */,
 			);
 			path = Source;
@@ -254,6 +257,7 @@
 				FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */,
 				FB132C641C910F5900728981 /* YBSlantedCollectionViewCell.swift in Sources */,
 				FB132C651C910F5900728981 /* YBSlantedCollectionViewLayout.swift in Sources */,
+				FBBBC5EE1FF7BC7B00A2AC04 /* CollectionViewSlantedLayout+Constants.swift in Sources */,
 				FB132C661C910F5900728981 /* YBSlantedCollectionViewLayoutAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

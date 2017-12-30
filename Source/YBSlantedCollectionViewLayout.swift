@@ -25,20 +25,6 @@
 import UIKit;
 
 /**
- Constants indicating the direction of slanting for the layout.
- */
-@objc public enum SlantingDirection: Int {
-    /**
-     Downward slanting direction
-     */
-    case downward
-    /**
-     Upward slanting direction
-     */
-    case upward
-}
-
-/**
  YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout 
  allowing the display of slanted content on UICollectionView.
  
@@ -100,6 +86,13 @@ import UIKit;
      */
     @IBInspectable open var itemSize: CGFloat = 225
 
+    /**
+     The zIndex order of the items in the layout.
+     
+     The default value of this property is `ascending`.
+     */
+    @objc open var zIndexOrder: ZIndexOrder = .ascending
+    
     //MARK: Private
     // :nodoc:
     internal var cachedAttributes = [YBSlantedCollectionViewLayoutAttributes]()
@@ -123,9 +116,7 @@ import UIKit;
         let bezierPath = UIBezierPath()
         
         let disableSlantingForTheFirstCell = indexPath.row == 0 && !firstCellSlantingEnabled;
-        
         let disableSlantingForTheFirstLastCell = indexPath.row == numberOfItems-1 && !lastCellSlantingEnabled;
-        
         let size = itemSize(forItemAt: indexPath)
         
         if ( scrollDirection.isVertical ) {
@@ -164,12 +155,9 @@ import UIKit;
         }
 
         bezierPath.close()
-        
         slantedLayerMask.path = bezierPath.cgPath
-        
         return slantedLayerMask
     }
-    
 }
 
 //MARK: CollectionViewLayout methods overriding
@@ -208,8 +196,8 @@ extension YBSlantedCollectionViewLayout {
             
             attributes.frame = frame
             attributes.size = frame.size
-            // Important because each cell has to slide over the top of the previous one
-            attributes.zIndex = item
+
+            attributes.zIndex = zIndexOrder.isAscending ? item : (numberOfItems - item)
             
             attributes.slantedLayerMask = self.maskForItemAtIndexPath(indexPath)
             

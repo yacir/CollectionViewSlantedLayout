@@ -33,19 +33,21 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         horizontalSlantedViewLayout.lineSpacing = 3
         horizontalSlantedViewLayout.itemSize = 300
         horizontalSlantedViewLayout.slantingDirection = .downward
+        horizontalSlantedViewLayout.zIndexOrder = .descending
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
     }
     
     func testSlantedViewLayoutHasDefaultValues() {
         let defaultSlantedViewLayout = YBSlantedCollectionViewLayout()
-        XCTAssertEqual(defaultSlantedViewLayout.slantingDelta, 50)
+        XCTAssertEqual(defaultSlantedViewLayout.slantingDelta, 75)
         XCTAssertEqual(defaultSlantedViewLayout.slantingDirection, .upward)
         XCTAssertEqual(defaultSlantedViewLayout.firstCellSlantingEnabled, true)
         XCTAssertEqual(defaultSlantedViewLayout.lastCellSlantingEnabled, true)
         XCTAssertEqual(defaultSlantedViewLayout.lineSpacing, 10)
         XCTAssertEqual(defaultSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.vertical)
-        XCTAssertEqual(defaultSlantedViewLayout.itemSize, 0)
+        XCTAssertEqual(defaultSlantedViewLayout.itemSize, 225)
+        XCTAssertEqual(defaultSlantedViewLayout.zIndexOrder, .ascending)
     }
     
     func testLayoutContentViewSizeUsesController() {
@@ -99,7 +101,26 @@ class YBSlantedCollectionViewLayoutTests: XCTestCase {
         
         collectionViewController.collectionView?.delegate = collectionViewController
     }
-
+    
+    func testThatZIndexAscendingOrderWorksAsExcpected() {
+        collectionViewController.items = [0, 1]
+        collectionViewController.view.layoutIfNeeded()
+        let firstItemIndexPath = IndexPath(item: 0, section: 0)
+        let firstItemZIndex = verticalSlantedViewLayout.layoutAttributesForItem(at: firstItemIndexPath)?.zIndex
+        let secondItemIndexPath = IndexPath(item: 1, section: 0)
+        let secondItemZIndex = verticalSlantedViewLayout.layoutAttributesForItem(at: secondItemIndexPath)?.zIndex
+        XCTAssertTrue(firstItemZIndex! < secondItemZIndex!)
+    }
+    
+    func testThatZIndexDescendingOrderWorksAsExcpected() {
+        horizontalCollectionViewController.items = [0, 1]
+        horizontalCollectionViewController.view.layoutIfNeeded()
+        let firstItemIndexPath = IndexPath(item: 0, section: 0)
+        let firstItemZIndex = horizontalSlantedViewLayout.layoutAttributesForItem(at: firstItemIndexPath)?.zIndex
+        let secondItemIndexPath = IndexPath(item: 1, section: 0)
+        let secondItemZIndex = horizontalSlantedViewLayout.layoutAttributesForItem(at: secondItemIndexPath)?.zIndex
+        XCTAssertTrue(firstItemZIndex! > secondItemZIndex!)
+    }
     
     func testLayoutHasSmoothScrolling() {
         let proposedOffset = verticalSlantedViewLayout.targetContentOffset(forProposedContentOffset: CGPoint(),

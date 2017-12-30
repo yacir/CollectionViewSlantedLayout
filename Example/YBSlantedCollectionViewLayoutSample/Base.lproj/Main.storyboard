@@ -42,17 +42,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <collectionViewLayout key="collectionViewLayout" id="mTM-Vp-4z9" customClass="YBSlantedCollectionViewLayout" customModule="YBSlantedCollectionViewLayout">
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="slantingDelta">
-                                            <integer key="value" value="76"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="firstCellSlantingEnabled" value="YES"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="lastCellSlantingEnabled" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
-                                            <real key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="itemSize">
-                                            <real key="value" value="227"/>
-                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewLayout>
                                 <cells>
