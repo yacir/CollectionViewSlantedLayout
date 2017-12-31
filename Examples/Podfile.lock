@@ -1,0 +1,16 @@
+PODS:
+  - CollectionViewSlantedLayout (3.0.0)
+
+DEPENDENCIES:
+  - CollectionViewSlantedLayout (from `../`)
+
+EXTERNAL SOURCES:
+  CollectionViewSlantedLayout:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CollectionViewSlantedLayout: 07ae5f0c6e82129c967e7c3606f5f39213999eb5
+
+PODFILE CHECKSUM: bf4b53868714c919a28bd891dba088bd12bd7918
+
+COCOAPODS: 1.3.1

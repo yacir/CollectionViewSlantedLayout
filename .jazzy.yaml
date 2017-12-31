@@ -1,0 +1,8 @@
+module: CollectionViewSlantedLayout
+author: Yassir Barchi
+author_url: http://yassir.fr
+github_url: https://github.com/yacir/CollectionViewSlantedLayout
+swift_version: 4.0
+exclude: Sources/Internal/*,Sources/Extentions/*
+readme: README.md
+output: docs

@@ -1,57 +1,40 @@
-# YBSlantedCollectionViewLayout
-
-[![Version](https://img.shields.io/cocoapods/v/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
-[![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)]()
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
-[![Build Status](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master)](https://travis-ci.org/yacir/YBSlantedCollectionViewLayout)
-[![codecov](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/YBSlantedCollectionViewLayout)
-[![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
-[![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/YBSlantedCollectionViewLayout)
-
-## Overview
-YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.
-
-## [Live Demo](https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g)
-
 <p align="center">
-  	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout"> 
+    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
 </p>
 
-## Usage
+**CollectionViewSlantedLayout** is a subclass of the [UICollectionViewLayout](https://developer.apple.com/documentation/uikit/uicollectionviewlayout) allowing the display of slanted cells in a [UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview).
 
-YBSlantedCollectionViewLayout contains six properties to customize the interface.
 
-```swift
-var slantingDelta: UInt
-var reverseSlantingAngle: Bool
-var firstCellSlantingEnabled: Bool
-var lastCellSlantingEnabled: Bool
-var lineSpacing: CGFloat
-var scrollDirection: UICollectionViewScrollDirection
-var itemSizeOptions: YBSlantedCollectionViewLayoutSizeOptions
-```
+[![Version](https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
+[![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)]()
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Version](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
+[![Build Status](https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master)](https://travis-ci.org/yacir/CollectionViewSlantedLayout)
+[![codecov](https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/CollectionViewSlantedLayout)
+[![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
+[![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
 
-- _slantingDelta_ is the slanting delta.  Defaults to 50
-- _reverseSlantingAngle_ allows to reverse the slanting angle if the value is `true`. By default, this property is set to `false`
-- _firstCellSlantingEnabled_ allows to enable the slanting for the first cell. By default, this property is set to `true`
-- _lastCellSlantingEnabled_ allows to enable the slanting for the last cell. By default, this property is set to `true`
-- _lineSpacing_ is the spacing to use between two items. Defaults to 10.0
-- _scrollDirection_ is the scroll direction. Defaults to `UICollectionViewScrollDirectionVertical`
-- _itemSizeOptions_ allows to set the item's width/height depending on the scroll direction.
 
-### Apply the slanting mask 
+<p align="center">
+  	<img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
+</p>
 
-To apply the slanting mask on the cellView, use the `YBSlantedCollectionViewCell` or subclass it.
+## Features
+- [x] Pure Swift 4.
+- [x] Works with every UICollectionView.
+- [x] Horizontal and vertical scrolling support.
+- [x] Dynamic cells height
+- [x] Fully Configurable
 
 ## Installation
 
 ### CocoaPods
-YBSlantedCollectionViewLayout is available through [CocoaPods](http://cocoapods.org). To install
+CollectionViewSlantedLayout is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "YBSlantedCollectionViewLayout", '~> 2.2'
+use_frameworks!
+pod "CollectionViewSlantedLayout", '~> 3.0'
 ```
 
 ### Carthage
@@ -59,19 +42,117 @@ pod "YBSlantedCollectionViewLayout", '~> 2.2'
 You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
 
 ```terminal
-github 'yacir/YBSlantedCollectionViewLayout'
+github 'yacir/CollectionViewSlantedLayout'
 ```
 
-## Roadmap
-- [x] Improve the attribution of the clic
-- [x] Carthage support
-- [x] Tests
-- [x] Swift 3 support
-- [x] Swift Package Manager support
+## Usage
+
+1. Import `CollectionViewSlantedLayout ` module to your controller
+
+    ```swift
+    import CollectionViewSlantedLayout
+    ```
+    
+2. Create an instance and add it to your `UICollectionView`.
+
+    ```swift
+	let slantedSayout = CollectionViewSlantedLayout()
+	UICollectionView(frame: .zero, collectionViewLayout: slantedSayout)
+    ```
+    
+3. Use the `CollectionViewSlantedCell` class for your cells or subclass it.
+
+
+Find a demo in the Examples folder.
+
+## Properties
+
+- **slantingSize**:
+
+	```swift
+	@IBInspectable var slantingSize: UInt
+	```
+	The slanting size. The default value of this property is `75`.
+
+- **slantingDirection**:
+	
+	```swift
+	var slantingDirection: SlantingDirection
+	```
+	The slanting direction. The default value of this property is `upward`.
+	
+- **slantingAngle**:
+
+	```swift
+	fileprivate(set) var slantingAngle: CGFloat
+	```
+	The angle, in radians, of the slanting. The value of this property could be used to apply a rotation transform on the cell's contentView in the `collectionView(_:cellForItemAt:)` method implementation.
+	     
+	```swift
+	if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+		cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
+	}
+	```
+- **scrollDirection**:
+	
+	```swift
+	var scrollDirection: UICollectionViewScrollDirection
+	```
+	The scroll direction of the grid. The grid layout scrolls along one axis only, either horizontally or vertically. The default value of this property is `vertical`.
+	
+- **isFistCellExcluded**:
+	
+	```swift
+	@IBInspectable var isFistCellExcluded: Bool
+	```
+	Allows to disable the slanting for the first cell. Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
+	
+- **isLastCellExcluded**:
+	
+	```swift
+	@IBInspectable var isLastCellExcluded: Bool
+	```
+	Allows to disable the slanting for the last cell. Set it to `true` to disable the slanting for the last cell. The default value of this property is `false`.
+	
+- **lineSpacing**:
+	
+	```swift
+	@IBInspectable var lineSpacing: CGFloat
+	```
+	The spacing to use between two items. The default value of this property is `10.0`.
+	
+- **itemSize**:
+	
+	```swift
+	@IBInspectable var itemSize: CGFloat
+	```
+	The default size to use for cells. If the delegate does not implement the `collectionView(_:layout:sizeForItemAt:)` method, the slanted layout uses the value in this property to set the size of each cell. This results in cells that all have the same size. The default value of this property is `225`.
+	
+- **zIndexOrder**:
+	
+	```swift
+	var zIndexOrder: ZIndexOrder
+	```
+	The zIndex order of the items in the layout. The default value of this property is `ascending`.
+
+	
+## Protocols
+
+The `CollectionViewDelegateSlantedLayout` protocol defines methods that let you coordinate with a `CollectionViewSlantedLayout` object to implement a slanted layout. The `CollectionViewDelegateSlantedLayout` protocol has the following methods:
+
+```swift
+optional func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: CollectionViewSlantedLayout,
+                             sizeForItemAt indexPath: IndexPath) -> CGFloat
+```
+
+This method asks the delegate for the size of the specified item’s cell.
+     
+If you do not implement this method, the slanted layout uses the values in its `itemSize` property to set the size of items instead. Your implementation of this method can return a fixed set of sizes or dynamically adjust the sizes based on the cell’s content.
 
 ## Author
 
-[Yassir Barchi](https://linkedin.com/in/yassir-barchi-318a7949)
+[Yassir Barchi](https://yassir.fr)
 
 ## Acknowledgement
 
@@ -80,4 +161,4 @@ This framework is inspired by [this prototype](https://dribbble.com/shots/172759
 
 ## License
 
-YBSlantedCollectionViewLayout is available under the MIT license. See the LICENSE file for more info.
+**CollectionViewSlantedLayout** is available under the MIT license. See the LICENSE file for more info.

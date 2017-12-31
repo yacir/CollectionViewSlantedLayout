@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CollectionViewSlantedLayout Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CollectionViewSlantedLayout" class="dashAnchor"></a>
+    <a title="CollectionViewSlantedLayout Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CollectionViewSlantedLayout Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/yacir/CollectionViewSlantedLayout"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CollectionViewSlantedLayout Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CollectionViewSlantedLayout Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedCell">CollectionViewSlantedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/SlantingDirection.html">SlantingDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ZIndexOrder.html">ZIndexOrder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CollectionViewSlantedLayout</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="kd">class</span> <span class="kt">CollectionViewSlantedLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span></code></pre>
+
+                </div>
+              </div>
+            <p>CollectionViewSlantedLayout is a subclass of UICollectionViewLayout 
+allowing the display of slanted content on UICollectionView.</p>
+
+<p>By default, this UICollectionViewLayout has initialize a set
+of properties to work as designed.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingSize"></a>
+                    <a name="//apple_ref/swift/Property/slantingSize" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingSize">slantingSize</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The slanting size.</p>
+
+<p>The default value of this property is <code>75</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingSize</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="mi">75</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingDirection"></a>
+                    <a name="//apple_ref/swift/Property/slantingDirection" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingDirection">slantingDirection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The slanting direction.</p>
+
+<p>The default value of this property is <code>upward</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingDirection</span><span class="p">:</span> <span class="kt"><a href="../Enums/SlantingDirection.html">SlantingDirection</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">upward</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingAngle"></a>
+                    <a name="//apple_ref/swift/Property/slantingAngle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)slantingAngle">slantingAngle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The angle, in radians, of the slanting.</p>
+
+<p>The value of this property could be used to apply a rotation transform on the cell&rsquo;s contentView in the
+<code>collectionView(_:cellForItemAt:)</code> method implementation.</p>
+<pre class="highlight plaintext"><code>if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+   cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
+}
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">slantingAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)scrollDirection"></a>
+                    <a name="//apple_ref/swift/Property/scrollDirection" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)scrollDirection">scrollDirection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The scroll direction of the grid.</p>
+
+<p>The grid layout scrolls along one axis only, either horizontally or vertically.
+The default value of this property is <code>vertical</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isFistCellExcluded"></a>
+                    <a name="//apple_ref/swift/Property/isFistCellExcluded" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isFistCellExcluded">isFistCellExcluded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows to disable the slanting for the first cell.</p>
+
+<p>Set it to <code>true</code> to disable the slanting for the first cell. The default value of this property is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isFistCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isLastCellExcluded"></a>
+                    <a name="//apple_ref/swift/Property/isLastCellExcluded" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)isLastCellExcluded">isLastCellExcluded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows to disable the slanting for the last cell.</p>
+
+<p>Set it to <code>true</code> to disable the slanting for the last cell. The default value of this property is <code>false</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)lineSpacing"></a>
+                    <a name="//apple_ref/swift/Property/lineSpacing" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)lineSpacing">lineSpacing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The spacing to use between two items.</p>
+
+<p>The default value of this property is 10.0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)itemSize"></a>
+                    <a name="//apple_ref/swift/Property/itemSize" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)itemSize">itemSize</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default size to use for cells.</p>
+
+<p>If the delegate does not implement the <code>collectionView(_:layout:sizeForItemAt:)</code> method, the slanted layout
+uses the value in this property to set the size of each cell. This results in cells that all have the same size.</p>
+
+<p>The default value of this property is 225.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">itemSize</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">225</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)zIndexOrder"></a>
+                    <a name="//apple_ref/swift/Property/zIndexOrder" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedLayout(py)zIndexOrder">zIndexOrder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The zIndex order of the items in the layout.</p>
+
+<p>The default value of this property is <code>ascending</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">zIndexOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ZIndexOrder.html">ZIndexOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">ascending</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2017-12-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
