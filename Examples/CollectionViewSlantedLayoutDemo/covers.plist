@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+        <key>title</key>
+        <string>Highway to Hell</string>
+		<key>creator</key>
+		<string>AC/DC</string>
+		<key>picture</key>
+		<string>1</string>
+	</dict>
+    <dict>
+        <key>title</key>
+        <string>Immigrant Song</string>
+        <key>creator</key>
+        <string>Led Zeppelin</string>
+        <key>picture</key>
+        <string>2</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Sunday Bloody Sunday</string>
+        <key>creator</key>
+        <string>U2</string>
+        <key>picture</key>
+        <string>3</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Under The Bridge</string>
+        <key>creator</key>
+        <string>Red Hot Chili Peppers</string>
+        <key>picture</key>
+        <string>4</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>All Along the Watchtower</string>
+        <key>creator</key>
+        <string>Jimi Hendrix</string>
+        <key>picture</key>
+        <string>5</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Dream On</string>
+        <key>creator</key>
+        <string>Aerosmith</string>
+        <key>picture</key>
+        <string>6</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Ziggy Stardust</string>
+        <key>creator</key>
+        <string>David Bowie</string>
+        <key>picture</key>
+        <string>7</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>La Grange</string>
+        <key>creator</key>
+        <string>ZZ Top</string>
+        <key>picture</key>
+        <string>9</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Won't Get Fooled Again</string>
+        <key>creator</key>
+        <string>The Who</string>
+        <key>picture</key>
+        <string>10</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>I Can't Get No</string>
+        <key>creator</key>
+        <string>The Rolling Stones</string>
+        <key>picture</key>
+        <string>12</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Roxanne</string>
+        <key>creator</key>
+        <string>The Police</string>
+        <key>picture</key>
+        <string>13</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>Stairway To Heaven</string>
+        <key>creator</key>
+        <string>Led Zeppelin</string>
+        <key>picture</key>
+        <string>14</string>
+    </dict>
+</array>
+</plist>

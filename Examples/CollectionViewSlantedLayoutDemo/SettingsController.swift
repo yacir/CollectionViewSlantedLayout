@@ -18,6 +18,7 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var slantingDirectionSegment: UISegmentedControl!
     @IBOutlet weak var scrollDirectionSegment: UISegmentedControl!
+    @IBOutlet weak var zIndexOrderSegment: UISegmentedControl!
     @IBOutlet weak var firstCellSlantingSwitch: UISwitch!
     @IBOutlet weak var lastCellSlantingSwitch: UISwitch!
     @IBOutlet weak var slantingSizeSlider: UISlider!
@@ -28,6 +29,7 @@ class SettingsController: UITableViewController {
         
         self.slantingDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.slantingDirection == .downward) ? 0 : 1
         self.scrollDirectionSegment.selectedSegmentIndex = (self.collectionViewLayout.scrollDirection == .horizontal) ? 0 : 1
+        self.zIndexOrderSegment.selectedSegmentIndex = (self.collectionViewLayout.zIndexOrder == .descending) ? 0 : 1
         self.firstCellSlantingSwitch.isOn = self.collectionViewLayout.isFistCellExcluded
         self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.isLastCellExcluded
         self.slantingSizeSlider.value = Float(self.collectionViewLayout.slantingSize)
@@ -50,6 +52,10 @@ class SettingsController: UITableViewController {
     
     @IBAction func scrollDirectionChanged(_ sender: UISegmentedControl) {
         self.collectionViewLayout.scrollDirection = (sender.selectedSegmentIndex == 0 ? .horizontal : .vertical)
+    }
+
+    @IBAction func zIndexOrderChanged(_ sender: UISegmentedControl) {
+        self.collectionViewLayout.zIndexOrder = (sender.selectedSegmentIndex == 0 ? .descending : .ascending)
     }
 
     @IBAction func firstCellSlantingSwitchChanged(_ sender: UISwitch) {

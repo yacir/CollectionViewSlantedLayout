@@ -13,23 +13,24 @@ import CollectionViewSlantedLayout
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    internal var images = [UIImage]()
-    
+    @IBOutlet weak var collectionViewLayout: CollectionViewSlantedLayout!
+
+    internal var covers = [[String:String]]()
+
     let reuseIdentifier = "customViewCell"
     
-    let numberOfItems = 13
-
+    override func loadView() {
+        super.loadView()
+        if let url = Bundle.main.url(forResource: "covers", withExtension: "plist") {
+            covers = (NSArray(contentsOf: url) as! [[String:String]])
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 1...numberOfItems {
-            let image = UIImage(named: "image-\(index).jpg")
-            if image != nil {
-                images.append(image!)
-            }
-        }
-        
         self.navigationController?.isNavigationBarHidden = true
+        collectionViewLayout.isFistCellExcluded = true
+        collectionViewLayout.isLastCellExcluded = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,21 +59,21 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return covers.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionCell
-            
-            cell.image = images[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionCell
+        
+        cell.image = UIImage(named: covers[indexPath.row]["picture"]!)!
 
-            if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
-                cell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
-            }
-
-            return cell
+        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+            cell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+        }
+        
+        return cell
     }
 }
 
@@ -85,7 +86,7 @@ extension ViewController: CollectionViewDelegateSlantedLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
-        return collectionViewLayout.scrollDirection == .vertical ? 225 : 325
+        return collectionViewLayout.scrollDirection == .vertical ? 275 : 325
     }
 }
 
