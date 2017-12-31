@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
+    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
 </p>
 
 **CollectionViewSlantedLayout** is a subclass of the [UICollectionViewLayout](https://developer.apple.com/documentation/uikit/uicollectionviewlayout) allowing the display of slanted cells in a [UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview).
@@ -16,7 +16,7 @@
 
 
 <p align="center">
-  	<img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
+  	<img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
 </p>
 
 ## Features
