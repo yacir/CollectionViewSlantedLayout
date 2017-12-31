@@ -1,7 +1,7 @@
 # CollectionViewSlantedLayout CHANGELOG
 
 ## 3.0 (12/30/2017)
-The CollectionViewSlantedLayout 3.0 version introduce a full new APIs and remove all the old ones. Check the Migration Guide.
+The CollectionViewSlantedLayout 3.0 version introduce a full new APIs and remove all the old ones.
 
 * Initial 3.0.0 Release
 * Swift 4.0 version

@@ -16,7 +16,7 @@
 
 
 <p align="center">
-  	<img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
+  	<img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
 </p>
 
 ## Features
