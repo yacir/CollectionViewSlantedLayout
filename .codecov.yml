@@ -1,0 +1,9 @@
+coverage:
+    patch:
+      default:
+        enabled: yes
+        target: 90%
+        threshold: 80%
+
+ignore:
+  - Tests/**/*
