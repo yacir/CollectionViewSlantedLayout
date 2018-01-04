@@ -1,5 +1,9 @@
 # CollectionViewSlantedLayout CHANGELOG
 
+## 3.0.1 (01/XX/2018)
+
+* Fix typo for `isFirstCellExcluded`, closes #5
+
 ## 3.0 (12/30/2017)
 The CollectionViewSlantedLayout 3.0 version introduce a full new APIs and remove all the old ones.
 

@@ -34,7 +34,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         horizontalSlantedViewLayout.itemSize = 300
         horizontalSlantedViewLayout.slantingDirection = .downward
         horizontalSlantedViewLayout.zIndexOrder = .descending
-        horizontalSlantedViewLayout.isFistCellExcluded = true
+        horizontalSlantedViewLayout.isFirstCellExcluded = true
         horizontalSlantedViewLayout.isLastCellExcluded = true
         horizontalCollectionViewController = CollectionViewController(collectionViewLayout: horizontalSlantedViewLayout)
         horizontalCollectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
@@ -44,7 +44,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         let defaultSlantedViewLayout = CollectionViewSlantedLayout()
         XCTAssertEqual(defaultSlantedViewLayout.slantingSize, 75)
         XCTAssertEqual(defaultSlantedViewLayout.slantingDirection, .upward)
-        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, false)
+        XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.isLastCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.lineSpacing, 10)
         XCTAssertEqual(defaultSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.vertical)
@@ -175,6 +175,19 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
     
     func testLayoutShouldInvalidateLayoutForBoundsChange() {
         XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayout(forBoundsChange: CGRect()))
+    }
+    
+    func testIsFirstCellExcludedCackwardsCompatibility() {
+        let defaultSlantedViewLayout = CollectionViewSlantedLayout()
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, defaultSlantedViewLayout.isFirstCellExcluded)
+        defaultSlantedViewLayout.isFistCellExcluded = true
+        XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, true)
+        defaultSlantedViewLayout.isFistCellExcluded = false
+        XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, false)
+        defaultSlantedViewLayout.isFirstCellExcluded = true
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, true)
+        defaultSlantedViewLayout.isFirstCellExcluded = false
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, false)
     }
 }
 

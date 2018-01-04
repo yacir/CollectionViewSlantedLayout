@@ -89,9 +89,20 @@ import UIKit;
      
      Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
      */
-    @IBInspectable open var isFistCellExcluded: Bool = false  {
+    @IBInspectable open var isFirstCellExcluded: Bool = false  {
         didSet {
             invalidateLayout()
+        }
+    }
+    
+    // :nodoc:
+    @available(*, deprecated:3.0.1, message: "Use isFirstCellExcluded instead")
+    @IBInspectable open var isFistCellExcluded:Bool {
+        get {
+            return isFirstCellExcluded
+        }
+        set {
+            isFirstCellExcluded = newValue
         }
     }
 
@@ -164,7 +175,7 @@ import UIKit;
         let slantedLayerMask = CAShapeLayer()
         let bezierPath = UIBezierPath()
         
-        let disableSlantingForTheFirstCell = indexPath.row == 0 && isFistCellExcluded;
+        let disableSlantingForTheFirstCell = indexPath.row == 0 && isFirstCellExcluded;
         let disableSlantingForTheFirstLastCell = indexPath.row == numberOfItems-1 && isLastCellExcluded;
         let size = itemSize(forItemAt: indexPath)
         
