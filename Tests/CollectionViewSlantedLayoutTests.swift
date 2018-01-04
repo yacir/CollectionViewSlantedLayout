@@ -176,5 +176,18 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
     func testLayoutShouldInvalidateLayoutForBoundsChange() {
         XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayout(forBoundsChange: CGRect()))
     }
+    
+    func testIsFirstCellExcludedCackwardsCompatibility() {
+        let defaultSlantedViewLayout = CollectionViewSlantedLayout()
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, defaultSlantedViewLayout.isFirstCellExcluded)
+        defaultSlantedViewLayout.isFistCellExcluded = true
+        XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, true)
+        defaultSlantedViewLayout.isFistCellExcluded = false
+        XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, false)
+        defaultSlantedViewLayout.isFirstCellExcluded = true
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, true)
+        defaultSlantedViewLayout.isFirstCellExcluded = false
+        XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, false)
+    }
 }
 
