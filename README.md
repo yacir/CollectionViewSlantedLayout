@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"/>
-    <a href="https://twitter.com/pangburnout">
+    <a href="https://cocoapods.org/pods/CollectionViewSlantedLayout">
         <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
     </a>
     <img src="https://img.shields.io/badge/SPM-✔-blue.svg" alt="SMP ready"/>
