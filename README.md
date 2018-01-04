@@ -106,19 +106,19 @@ Find a demo in the Examples folder.
 	```
 	The scroll direction of the grid. The grid layout scrolls along one axis only, either horizontally or vertically. The default value of this property is `vertical`.
 	
-- **isFistCellExcluded**:
+- **isFirstCellExcluded**:
 	
 	```swift
-	@IBInspectable var isFistCellExcluded: Bool
+	@IBInspectable var isFirstCellExcluded: Bool
 	```
-	Allows to disable the slanting for the first cell. Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
+	Set it to `true` to disable the slanting for the first cell. The default value of this property is `false`.
 	
 - **isLastCellExcluded**:
 	
 	```swift
 	@IBInspectable var isLastCellExcluded: Bool
 	```
-	Allows to disable the slanting for the last cell. Set it to `true` to disable the slanting for the last cell. The default value of this property is `false`.
+	Set it to `true` to disable the slanting for the last cell. The default value of this property is `false`.
 	
 - **lineSpacing**:
 	
