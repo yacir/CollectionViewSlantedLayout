@@ -64,22 +64,30 @@
           <section class="section">
             
             <p align="center">
-    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/v3.0/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
+    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"/>
+    <a href="https://twitter.com/pangburnout">
+        <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
+    </a>
+    <img src="https://img.shields.io/badge/SPM-✔-blue.svg" alt="SMP ready"/>
+    <img src="https://img.shields.io/badge/Carthage-✔-blue.svg" alt="Carthage compatible"/>
+    <img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master"/>
+    </a>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg"/>
+    </a>
 </p>
 
 <p><strong>CollectionViewSlantedLayout</strong> is a subclass of the <a href="https://developer.apple.com/documentation/uikit/uicollectionviewlayout">UICollectionViewLayout</a> allowing the display of slanted cells in a <a href="https://developer.apple.com/documentation/uikit/uicollectionview">UICollectionView</a>.</p>
 
-<p><a href="http://cocoapods.org/pods/CollectionViewSlantedLayout"><img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat" alt="Version"></a>
-<a href=""><img src="https://img.shields.io/badge/SPM-ready-orange.svg" alt="SPM"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
-<a href=""><img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift Version"></a>
-<a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout"><img src="https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master" alt="Build Status"></a>
-<a href="https://codecov.io/gh/yacir/CollectionViewSlantedLayout"><img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg" alt="codecov"></a>
-<a href="http://cocoapods.org/pods/CollectionViewSlantedLayout"><img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat" alt="Platform"></a>
-<a href="http://cocoapods.org/pods/CollectionViewSlantedLayout"><img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat" alt="License"></a></p>
-
 <p align="center">
-    <img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
+    <img src="https://user-images.githubusercontent.com/2587473/34458447-9f434c8a-edd3-11e7-98b7-f32b4284268d.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
 </p>
 <h2 id='features' class='heading'>Features</h2>
 
@@ -144,16 +152,16 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <p>The scroll direction of the grid. The grid layout scrolls along one axis only, either horizontally or vertically. The default value of this property is <code>vertical</code>.</p></li>
-<li><p><strong>isFistCellExcluded</strong>:</p>
-<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">isFistCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span>
+<li><p><strong>isFirstCellExcluded</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">isFirstCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span>
 </code></pre>
 
-<p>Allows to disable the slanting for the first cell. Set it to <code>true</code> to disable the slanting for the first cell. The default value of this property is <code>false</code>.</p></li>
+<p>Set it to <code>true</code> to disable the slanting for the first cell. The default value of this property is <code>false</code>.</p></li>
 <li><p><strong>isLastCellExcluded</strong>:</p>
 <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span>
 </code></pre>
 
-<p>Allows to disable the slanting for the last cell. Set it to <code>true</code> to disable the slanting for the last cell. The default value of this property is <code>false</code>.</p></li>
+<p>Set it to <code>true</code> to disable the slanting for the last cell. The default value of this property is <code>false</code>.</p></li>
 <li><p><strong>lineSpacing</strong>:</p>
 <pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span>
 </code></pre>
@@ -194,7 +202,7 @@ it, simply add the following line to your Podfile:</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2017-12-31)</p>
+          <p>&copy; 2018 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2018-01-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

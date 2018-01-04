@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "CollectionViewSlantedLayout"
-  s.version          = "3.0.0"
+  s.version          = "3.0.1"
   s.summary          = "UICollectionViewLayout allowing the display of slanted content on UICollectionView"
 
   s.description      = <<-DESC

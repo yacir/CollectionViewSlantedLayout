@@ -95,7 +95,7 @@ import UIKit;
         }
     }
     
-    // :nodoc:
+    /// :nodoc:
     @available(*, deprecated:3.0.1, message: "Use isFirstCellExcluded instead")
     @IBInspectable open var isFistCellExcluded:Bool {
         get {
@@ -154,12 +154,12 @@ import UIKit;
     }
     
     //MARK: Private
-    // :nodoc:
+    /// :nodoc:
     internal var cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
-    // :nodoc:
+    /// :nodoc:
     internal var cachedContentSize: CGFloat = 0
     
-    // :nodoc:
+    /// :nodoc:
     fileprivate func itemSize(forItemAt indexPath: IndexPath) -> CGFloat {
         guard let collectionView = collectionView,
                 let delegate = collectionView.delegate as? CollectionViewDelegateSlantedLayout else {
