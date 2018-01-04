@@ -6,4 +6,4 @@ coverage:
         threshold: 80%
 
 ignore:
-  - Tests/**/*
+  - "Tests/**/*"
