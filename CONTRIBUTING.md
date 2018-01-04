@@ -7,7 +7,7 @@
 Any type of contribution is welcome, not only code. You can help with 
 
 - **QA**: file bug reports, the more details you can give the better (e.g. screenshots with the console open)
-- **Code**: take a look at the [open issues](issues). Even if you can't write code, commenting on them, showing that you care about a given issue matters. It helps us triage them.
+- **Code**: take a look at the [open issues](https://github.com/yacir/CollectionViewSlantedLayout/issues). Even if you can't write code, commenting on them, showing that you care about a given issue matters. It helps us triage them.
 
 ## Your First Contribution
 
