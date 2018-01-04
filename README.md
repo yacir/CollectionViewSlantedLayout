@@ -2,18 +2,24 @@
     <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
 </p>
 
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"/>
+    <a href="https://twitter.com/pangburnout">
+        <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
+    </a>
+    <img src="https://img.shields.io/badge/SPM-✔-blue.svg" alt="SMP ready"/>
+    <img src="https://img.shields.io/badge/Carthage-✔-blue.svg" alt="Carthage compatible"/>
+    <img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master"/>
+    </a>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg"/>
+    </a>
+</p>
+
 **CollectionViewSlantedLayout** is a subclass of the [UICollectionViewLayout](https://developer.apple.com/documentation/uikit/uicollectionviewlayout) allowing the display of slanted cells in a [UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview).
-
-
-[![Version](https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
-[![SPM](https://img.shields.io/badge/SPM-ready-orange.svg)]()
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift Version](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
-[![Build Status](https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master)](https://travis-ci.org/yacir/CollectionViewSlantedLayout)
-[![codecov](https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg)](https://codecov.io/gh/yacir/CollectionViewSlantedLayout)
-[![Platform](https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
-[![License](https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat)](http://cocoapods.org/pods/CollectionViewSlantedLayout)
-
 
 <p align="center">
   	<img src="https://user-images.githubusercontent.com/2587473/34458447-9f434c8a-edd3-11e7-98b7-f32b4284268d.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
