@@ -24,4 +24,4 @@ It is also always helpful to have some context for your pull request. What was t
 
 ## Questions
 
-If you have any questions or found a bug in the source code, create an [issue](issue) (protip: do a quick search first to see if someone else didn't ask the same question before!).
+If you have any questions or found a bug in the source code, create an [issue](https://github.com/yacir/CollectionViewSlantedLayout/issues) (protip: do a quick search first to see if someone else didn't ask the same question before!).
