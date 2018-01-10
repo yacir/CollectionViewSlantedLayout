@@ -1,0 +1,48 @@
+included:
+  - Sources
+  - Tests
+
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - file_header
+  - first_where
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+
+line_length: 120
+
+force_cast: warning
+
+force_try:
+  severity: warning
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+file_length:
+  warning: 600
+  error: 1200
+
+type_name:
+  min_length: 3
+  max_length:
+    warning: 40
+    error: 50
+
+identifier_name:
+  min_length:
+    error: 3
+
+number_separator:
+  minimum_length: 5
