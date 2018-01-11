@@ -1,18 +1,18 @@
 /**
  This file is part of the CollectionViewSlantedLayout package.
- 
- Copyright (c) 2016 Yassir Barchi <dev.yassir@gmail.com>
- 
+
+ Copyright © 2017 Yassir Barchi <github@yassir.fr>
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,29 +25,31 @@
 import UIKit
 
 /// :nodoc:
-open class CollectionViewSlantedLayoutAttributes : UICollectionViewLayoutAttributes {
-    
+open class CollectionViewSlantedLayoutAttributes: UICollectionViewLayoutAttributes {
+
     /// :nodoc:
-    open var slantedLayerMask :CAShapeLayer?
-    
+    open var slantedLayerMask: CAShapeLayer?
+
     /// :nodoc:
     override open func copy(with zone: NSZone?) -> Any {
-        
-        let attributesCopy = super.copy(with: zone) as! CollectionViewSlantedLayoutAttributes
-        attributesCopy.slantedLayerMask = self.slantedLayerMask
+
+        let attributesCopy = super.copy(with: zone)
+        if let attributesCopy = attributesCopy as? CollectionViewSlantedLayoutAttributes {
+            attributesCopy.slantedLayerMask = self.slantedLayerMask
+        }
         return attributesCopy
     }
-    
+
     /// :nodoc:
     override open func isEqual(_ object: Any?) -> Bool {
-        
+
         if let o = object as? CollectionViewSlantedLayoutAttributes {
             if self.slantedLayerMask != o.slantedLayerMask {
                 return false
             }
             return super.isEqual(object)
         }
-        
+
         return false
     }
 }
