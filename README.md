@@ -11,11 +11,15 @@
     <img src="https://img.shields.io/badge/Carthage-✔-blue.svg" alt="Carthage compatible"/>
     <img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat"/>
     <img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <br/>
     <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
         <img src="https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master"/>
     </a>
     <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
         <img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg"/>
+    </a>
+    <a href="https://codebeat.co/projects/github-com-yacir-collectionviewslantedlayout-master">
+        <img alt="codebeat badge" src="https://codebeat.co/badges/82e9e61b-8400-4cb9-9465-a151e71b01a3" />
     </a>
 </p>
 
