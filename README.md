@@ -47,7 +47,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 use_frameworks!
-pod "CollectionViewSlantedLayout", '~> 3.0'
+pod 'CollectionViewSlantedLayout', '~> 3.0'
 ```
 
 ### Carthage
