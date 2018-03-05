@@ -33,6 +33,9 @@
 </p>
 
 ## Features
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b30e22cde374b7ba53a0dce643c8980)](https://app.codacy.com/app/yacir/CollectionViewSlantedLayout?utm_source=github.com&utm_medium=referral&utm_content=yacir/CollectionViewSlantedLayout&utm_campaign=badger)
+
 - [x] Pure Swift 4.
 - [x] Works with every UICollectionView.
 - [x] Horizontal and vertical scrolling support.
