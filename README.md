@@ -18,8 +18,8 @@
     <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
         <img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg"/>
     </a>
-    <a href="https://codebeat.co/projects/github-com-yacir-collectionviewslantedlayout-master">
-        <img alt="codebeat badge" src="https://codebeat.co/badges/82e9e61b-8400-4cb9-9465-a151e71b01a3" />
+    <a href="https://www.codacy.com/app/yacir/CollectionViewSlantedLayout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yacir/CollectionViewSlantedLayout&amp;utm_campaign=Badge_Grade">
+        <img alt="codacy badge" src="https://api.codacy.com/project/badge/Grade/e5ae5581b13245199eb7c39cf178adea" />
     </a>
     <a href="http://clayallsopp.github.io/readme-score?url=yacir%2Fcollectionviewslantedlayout">
    		<img alt="Score Me" src="https://img.shields.io/badge/dynamic/json.svg?label=ScoreMe&colorB=62c87a&prefix=&suffix=&query=$.score&uri=http%3A%2F%2Freadme-score-api.herokuapp.com%2Fscore.json%3Furl%3Dyacir%2FCollectionViewSlantedLayout" />
