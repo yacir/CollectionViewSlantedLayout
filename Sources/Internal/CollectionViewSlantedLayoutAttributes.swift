@@ -43,8 +43,8 @@ open class CollectionViewSlantedLayoutAttributes: UICollectionViewLayoutAttribut
     /// :nodoc:
     override open func isEqual(_ object: Any?) -> Bool {
 
-        if let o = object as? CollectionViewSlantedLayoutAttributes {
-            if self.slantedLayerMask != o.slantedLayerMask {
+        if let obj = object as? CollectionViewSlantedLayoutAttributes {
+            if self.slantedLayerMask != obj.slantedLayerMask {
                 return false
             }
             return super.isEqual(object)
