@@ -34,8 +34,6 @@ class SettingsController: UITableViewController {
         self.lastCellSlantingSwitch.isOn = self.collectionViewLayout.isLastCellExcluded
         self.slantingSizeSlider.value = Float(self.collectionViewLayout.slantingSize)
         self.lineSpacingSlider.value = Float(self.collectionViewLayout.lineSpacing)
-        
-        UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.slide)
     }
     
     override var prefersStatusBarHidden : Bool {

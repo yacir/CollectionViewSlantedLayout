@@ -46,7 +46,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         collectionViewController.view.frame = CGRect(x: 0, y: 0, width: 600, height: 600)
 
         horizontalSlantedViewLayout = CollectionViewSlantedLayout()
-        horizontalSlantedViewLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
+        horizontalSlantedViewLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         horizontalSlantedViewLayout.lineSpacing = 3
         horizontalSlantedViewLayout.itemSize = 300
         horizontalSlantedViewLayout.slantingDirection = .downward
@@ -64,7 +64,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         XCTAssertEqual(defaultSlantedViewLayout.isFirstCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.isLastCellExcluded, false)
         XCTAssertEqual(defaultSlantedViewLayout.lineSpacing, 10)
-        XCTAssertEqual(defaultSlantedViewLayout.scrollDirection, UICollectionViewScrollDirection.vertical)
+        XCTAssertEqual(defaultSlantedViewLayout.scrollDirection, UICollectionView.ScrollDirection.vertical)
         XCTAssertEqual(defaultSlantedViewLayout.itemSize, 225)
         XCTAssertEqual(defaultSlantedViewLayout.zIndexOrder, .ascending)
     }
@@ -201,7 +201,7 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
         XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayout(forBoundsChange: CGRect()))
     }
 
-    func testIsFirstCellExcludedCackwardsCompatibility() {
+    func testIsFirstCellExcludedBackwardsCompatibility() {
         let defaultSlantedViewLayout = CollectionViewSlantedLayout()
         XCTAssertEqual(defaultSlantedViewLayout.isFistCellExcluded, defaultSlantedViewLayout.isFirstCellExcluded)
         defaultSlantedViewLayout.isFistCellExcluded = true
