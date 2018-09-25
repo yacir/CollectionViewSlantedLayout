@@ -24,7 +24,7 @@
 
 import UIKit
 
-extension UICollectionViewScrollDirection {
+extension UICollectionView.ScrollDirection {
 
     var isVertical: Bool {
         return self == .vertical

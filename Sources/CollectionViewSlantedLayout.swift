@@ -77,7 +77,7 @@ import UIKit
      The grid layout scrolls along one axis only, either horizontally or vertically.
      The default value of this property is `vertical`.
      */
-    @objc open var scrollDirection: UICollectionViewScrollDirection = .vertical {
+    @objc open var scrollDirection: UICollectionView.ScrollDirection = .vertical {
         didSet {
             updateRotationAngle()
             invalidateLayout()

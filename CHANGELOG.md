@@ -1,5 +1,9 @@
 # CollectionViewSlantedLayout CHANGELOG
 
+## 3.x.x (mm/dd/2018)
+
+* Updates to build specs with Xcode10 / Swift 4.2
+
 ## 3.0.1 (01/04/2018)
 
 * Fixes typo for `isFirstCellExcluded` property, closes #5

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.0-orange.svg" alt="Swift 4.0"/>
+    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" alt="Swift 4.2"/>
     <a href="https://cocoapods.org/pods/CollectionViewSlantedLayout">
         <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
     </a>
