@@ -40,8 +40,7 @@ import UIKit
      */
     @IBInspectable open var slantingSize: UInt = 75 {
         didSet {
-            updateRotationAngle()
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -52,8 +51,7 @@ import UIKit
      */
     @objc open var slantingDirection: SlantingDirection = .upward {
         didSet {
-            updateRotationAngle()
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -79,8 +77,7 @@ import UIKit
      */
     @objc open var scrollDirection: UICollectionView.ScrollDirection = .vertical {
         didSet {
-            updateRotationAngle()
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -91,7 +88,7 @@ import UIKit
      */
     @IBInspectable open var isFirstCellExcluded: Bool = false {
         didSet {
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -113,7 +110,7 @@ import UIKit
      */
     @IBInspectable open var isLastCellExcluded: Bool = false {
         didSet {
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -124,7 +121,7 @@ import UIKit
      */
     @IBInspectable open var lineSpacing: CGFloat = 10 {
         didSet {
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -138,7 +135,7 @@ import UIKit
      */
     @IBInspectable open var itemSize: CGFloat = 225 {
         didSet {
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -149,7 +146,7 @@ import UIKit
      */
     @objc open var zIndexOrder: ZIndexOrder = .ascending {
         didSet {
-            invalidateLayout()
+            invalidate()
         }
     }
 
@@ -237,6 +234,18 @@ import UIKit
         let angle = atan(tan(oppositeSide / adjacentSide))
         slantingAngle = angle * CGFloat(factor)
     }
+
+    /// :nodoc:
+    fileprivate func invalidate() {
+        invalidateCache()
+        invalidateLayout()
+    }
+
+    /// :nodoc:
+    fileprivate func invalidateCache() {
+        cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
+        cachedContentSize = 0
+    }
 }
 
 // MARK: CollectionViewLayout methods overriding
@@ -253,14 +262,17 @@ extension CollectionViewSlantedLayout {
 
     /// :nodoc:
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        invalidateCache()
         return true
     }
 
     /// :nodoc:
     override open func prepare() {
+        guard cachedAttributes.isEmpty else {
+            return
+        }
+
         updateRotationAngle()
-        cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
-        cachedContentSize = 0
 
         var position: CGFloat = 0
 
