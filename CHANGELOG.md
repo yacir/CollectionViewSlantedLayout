@@ -1,8 +1,14 @@
 # CollectionViewSlantedLayout CHANGELOG
 
-## 3.x.x (mm/dd/2018)
+## 3.1.0 (09/29/2018)
 
 * Updates to build specs with Xcode10 / Swift 4.2
+* Fixes Identifier Name Violation #20
+* Improves the performances by using the cache effectively #23
+* Fixes SwiftLint errors & warnings
+* Removes the deprecated `isFistCellExcluded` property 
+* Refactor mask calculation #26
+* Others minor enhancements
 
 ## 3.0.1 (01/04/2018)
 
