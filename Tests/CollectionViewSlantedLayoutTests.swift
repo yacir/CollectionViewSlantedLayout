@@ -200,4 +200,5 @@ class CollectionViewSlantedLayoutTests: XCTestCase {
     func testLayoutShouldInvalidateLayoutForBoundsChange() {
         XCTAssertTrue(verticalSlantedViewLayout.shouldInvalidateLayout(forBoundsChange: CGRect()))
     }
+
 }

@@ -52,4 +52,5 @@ open class CollectionViewSlantedLayoutAttributes: UICollectionViewLayoutAttribut
 
         return false
     }
+
 }

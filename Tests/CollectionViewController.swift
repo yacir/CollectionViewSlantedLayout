@@ -34,7 +34,6 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.collectionView!.register(CollectionViewSlantedCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
@@ -52,12 +51,15 @@ class CollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         return cell
     }
+
 }
 
 extension CollectionViewController: CollectionViewDelegateSlantedLayout {
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: CollectionViewSlantedLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGFloat {
         return itemSize ?? collectionViewLayout.itemSize
     }
+
 }

@@ -152,4 +152,5 @@ public struct CollectionViewSlantedMasks {
 
         return (startingPoints, defaultPoints, endingPoints)
     }
+
 }

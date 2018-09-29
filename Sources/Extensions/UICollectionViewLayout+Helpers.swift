@@ -44,4 +44,5 @@ extension UICollectionViewLayout {
 
         return collectionView.frame.height - collectionView.contentInset.top - collectionView.contentInset.bottom
     }
+
 }

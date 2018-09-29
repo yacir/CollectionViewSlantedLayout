@@ -239,4 +239,5 @@ class CollectionViewSlantedMasksTests: XCTestCase {
         XCTAssertFalse(masks.endingMask.path!.contains(point9))
         XCTAssertFalse(masks.endingMask.path!.contains(point10))
     }
+
 }
