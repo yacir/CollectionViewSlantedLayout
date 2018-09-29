@@ -22,12 +22,32 @@
  THE SOFTWARE.
  */
 
-import UIKit
+import QuartzCore
 
-extension UICollectionView.ScrollDirection {
+/// :nodoc:
+extension CAShapeLayer {
 
-    var isVertical: Bool {
-        return self == .vertical
+    /// :nodoc:
+    convenience init(path cgpath: CGPath?) {
+        self.init()
+        path = cgpath
+    }
+
+    /// :nodoc:
+    convenience init(pathPoints: [CGPoint]) {
+        self.init()
+        guard pathPoints.count > 2 else { return }
+
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: pathPoints[0])
+
+        for idx in 1..<pathPoints.count {
+            bezierPath.addLine(to: pathPoints[idx])
+        }
+
+        bezierPath.close()
+
+        path = bezierPath.cgPath
     }
 
 }

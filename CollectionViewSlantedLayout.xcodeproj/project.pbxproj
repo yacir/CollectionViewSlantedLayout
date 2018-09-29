@@ -13,6 +13,9 @@
 		FB132C641C910F5900728981 /* CollectionViewSlantedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C611C910F5900728981 /* CollectionViewSlantedCell.swift */; };
 		FB132C651C910F5900728981 /* CollectionViewSlantedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C621C910F5900728981 /* CollectionViewSlantedLayout.swift */; };
 		FB132C661C910F5900728981 /* CollectionViewSlantedLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB132C631C910F5900728981 /* CollectionViewSlantedLayoutAttributes.swift */; };
+		FB3A7BE1215F591500B18AE8 /* CollectionViewSlantedMasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A7BE0215F591500B18AE8 /* CollectionViewSlantedMasks.swift */; };
+		FB3A7BE3215F592400B18AE8 /* CAShapeLayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A7BE2215F592400B18AE8 /* CAShapeLayer+Helpers.swift */; };
+		FB3A7BE8215F76EF00B18AE8 /* CollectionViewSlantedMasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A7BE4215F727300B18AE8 /* CollectionViewSlantedMasksTests.swift */; };
 		FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */; };
 		FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */; };
 		FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */; };
@@ -40,6 +43,9 @@
 		FB132C611C910F5900728981 /* CollectionViewSlantedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSlantedCell.swift; sourceTree = "<group>"; };
 		FB132C621C910F5900728981 /* CollectionViewSlantedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSlantedLayout.swift; sourceTree = "<group>"; };
 		FB132C631C910F5900728981 /* CollectionViewSlantedLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSlantedLayoutAttributes.swift; sourceTree = "<group>"; };
+		FB3A7BE0215F591500B18AE8 /* CollectionViewSlantedMasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSlantedMasks.swift; sourceTree = "<group>"; };
+		FB3A7BE2215F592400B18AE8 /* CAShapeLayer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAShapeLayer+Helpers.swift"; sourceTree = "<group>"; };
+		FB3A7BE4215F727300B18AE8 /* CollectionViewSlantedMasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSlantedMasksTests.swift; sourceTree = "<group>"; };
 		FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout+Helpers.swift"; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				FB132C591C910C0300728981 /* CollectionViewSlantedLayoutTests.swift */,
+				FB3A7BE4215F727300B18AE8 /* CollectionViewSlantedMasksTests.swift */,
 				FB40E22A1CA352FD00B37E7C /* CollectionViewController.swift */,
 				FB132C691C910F8200728981 /* Supporting Files */,
 			);
@@ -128,6 +135,7 @@
 		FB6A0BF51FEC83380078E2DD /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FB3A7BE0215F591500B18AE8 /* CollectionViewSlantedMasks.swift */,
 				FB132C631C910F5900728981 /* CollectionViewSlantedLayoutAttributes.swift */,
 			);
 			path = Internal;
@@ -136,6 +144,7 @@
 		FB6A0BF81FEC83950078E2DD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FB3A7BE2215F592400B18AE8 /* CAShapeLayer+Helpers.swift */,
 				FB6A0BF61FEC838F0078E2DD /* UICollectionView+Helpers.swift */,
 				FB6A0BF91FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift */,
 			);
@@ -270,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3A7BE1215F591500B18AE8 /* CollectionViewSlantedMasks.swift in Sources */,
 				FB6A0BF71FEC838F0078E2DD /* UICollectionView+Helpers.swift in Sources */,
 				FBBBC5E71FF79E1000A2AC04 /* CollectionViewDelegateSlantedLayout.swift in Sources */,
+				FB3A7BE3215F592400B18AE8 /* CAShapeLayer+Helpers.swift in Sources */,
 				FB6A0BFA1FEC8D260078E2DD /* UICollectionViewLayout+Helpers.swift in Sources */,
 				FB132C641C910F5900728981 /* CollectionViewSlantedCell.swift in Sources */,
 				FB132C651C910F5900728981 /* CollectionViewSlantedLayout.swift in Sources */,
@@ -285,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB40E22C1CA3530400B37E7C /* CollectionViewController.swift in Sources */,
+				FB3A7BE8215F76EF00B18AE8 /* CollectionViewSlantedMasksTests.swift in Sources */,
 				FB132C5F1C910E4300728981 /* CollectionViewSlantedLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

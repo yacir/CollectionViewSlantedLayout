@@ -54,4 +54,5 @@ import UIKit
         slantedLayerMask = layoutAttributes.slantedLayerMask
         layer.mask = layoutAttributes.slantedLayerMask
     }
+
 }
