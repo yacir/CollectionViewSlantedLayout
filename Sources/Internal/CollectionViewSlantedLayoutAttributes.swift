@@ -35,7 +35,7 @@ open class CollectionViewSlantedLayoutAttributes: UICollectionViewLayoutAttribut
 
         let attributesCopy = super.copy(with: zone)
         if let attributesCopy = attributesCopy as? CollectionViewSlantedLayoutAttributes {
-            attributesCopy.slantedLayerMask = self.slantedLayerMask
+            attributesCopy.slantedLayerMask = slantedLayerMask
         }
         return attributesCopy
     }
@@ -44,7 +44,7 @@ open class CollectionViewSlantedLayoutAttributes: UICollectionViewLayoutAttribut
     override open func isEqual(_ object: Any?) -> Bool {
 
         if let obj = object as? CollectionViewSlantedLayoutAttributes {
-            if self.slantedLayerMask != obj.slantedLayerMask {
+            if slantedLayerMask != obj.slantedLayerMask {
                 return false
             }
             return super.isEqual(object)

@@ -35,7 +35,7 @@ import UIKit
 
     /// :nodoc:
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        guard let mask = self.slantedLayerMask else {
+        guard let mask = slantedLayerMask else {
             return super.point(inside: point, with: event)
         }
 
@@ -51,7 +51,7 @@ import UIKit
         guard let layoutAttributes = layoutAttributes as? CollectionViewSlantedLayoutAttributes else {
             return
         }
-        self.slantedLayerMask = layoutAttributes.slantedLayerMask
-        self.layer.mask = layoutAttributes.slantedLayerMask
+        slantedLayerMask = layoutAttributes.slantedLayerMask
+        layer.mask = layoutAttributes.slantedLayerMask
     }
 }

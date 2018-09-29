@@ -138,6 +138,7 @@
 				FB1735891C83A0B400EEDB5F /* Resources */,
 				FB132C761C91135E00728981 /* CopyFiles */,
 				6DF225E9B9A30B644E491F10 /* [CP] Embed Pods Frameworks */,
+				FB3A7BDF215F4DEF00B18AE8 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -232,6 +233,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CollectionViewSlantedLayoutDemo/Pods-CollectionViewSlantedLayoutDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FB3A7BDF215F4DEF00B18AE8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
