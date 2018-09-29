@@ -31,16 +31,13 @@ import UIKit
 @objc open class CollectionViewSlantedCell: UICollectionViewCell {
 
     /// :nodoc:
-    fileprivate var slantedLayerMask: CAShapeLayer?
-
-    /// :nodoc:
     override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        guard let mask = slantedLayerMask else {
+        guard let mask = layer.mask as? CAShapeLayer, let path = mask.path else {
             return super.point(inside: point, with: event)
         }
 
         let bezierPath = UIBezierPath()
-        bezierPath.cgPath = mask.path!
+        bezierPath.cgPath = path
         let result = bezierPath.contains(point)
         return result
     }
@@ -51,7 +48,6 @@ import UIKit
         guard let layoutAttributes = layoutAttributes as? CollectionViewSlantedLayoutAttributes else {
             return
         }
-        slantedLayerMask = layoutAttributes.slantedLayerMask
         layer.mask = layoutAttributes.slantedLayerMask
     }
 
