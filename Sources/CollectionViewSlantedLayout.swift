@@ -92,17 +92,6 @@ import UIKit
         }
     }
 
-    /// :nodoc:
-    @available(*, deprecated: 3.0.1, message: "Use isFirstCellExcluded instead")
-    @IBInspectable open var isFistCellExcluded: Bool {
-        get {
-            return isFirstCellExcluded
-        }
-        set {
-            isFirstCellExcluded = newValue
-        }
-    }
-
     /**
      Allows to disable the slanting for the last cell.
 
