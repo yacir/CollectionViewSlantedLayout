@@ -146,67 +146,46 @@ import UIKit
     internal var cachedContentSize: CGFloat = 0
 
     /// :nodoc:
-    fileprivate func itemSize(forItemAt indexPath: IndexPath) -> CGFloat {
+    fileprivate func itemSize(forItemAt indexPath: IndexPath) -> (value: CGFloat, isDynamic: Bool) {
         guard let collectionView = collectionView,
             let delegate = collectionView.delegate as? CollectionViewDelegateSlantedLayout else {
-                return max(itemSize, 0)
+                return (max(itemSize, 0), false)
         }
 
         let size = delegate.collectionView?(collectionView, layout: self, sizeForItemAt: indexPath)
-        return max(size ?? itemSize, 0)
+        return (max(size ?? itemSize, 0), size != nil)
     }
 
     /// :nodoc:
-    fileprivate func maskForItemAtIndexPath(_ indexPath: IndexPath) -> CAShapeLayer {
-        let size = itemSize(forItemAt: indexPath)
+    fileprivate func maskForItemAtIndexPath(_ indexPath: IndexPath,
+                                            size: CGFloat,
+                                            isDynamicSize: Bool,
+                                            staticMasks: CollectionViewSlantedMasks) -> CAShapeLayer {
 
-        let isFirstCellExcluded = indexPath.row == 0 && self.isFirstCellExcluded
-        let isLastCellExcluded = indexPath.row == numberOfItems - 1 && self.isLastCellExcluded
+        let masks = isDynamicSize ? calculatedMasks(itemSize: size) : CollectionViewSlantedMasks(masks: staticMasks)
 
-        let firstControlPoint = isFirstCellExcluded ? 0 : CGFloat(slantingSize)
-        let secondControlPoint = isLastCellExcluded ? size : size - CGFloat(slantingSize)
-
-        var pathPoints = [CGPoint]()
-
-        if scrollDirection.isVertical {
-            switch self.slantingDirection {
-            case .downward:
-                pathPoints = [CGPoint(x: 0, y: 0),
-                              CGPoint(x: width, y: firstControlPoint),
-                              CGPoint(x: width, y: size),
-                              CGPoint(x: 0, y: secondControlPoint)]
-            default:
-                pathPoints = [CGPoint(x: 0, y: firstControlPoint),
-                              CGPoint(x: width, y: 0),
-                              CGPoint(x: width, y: secondControlPoint),
-                              CGPoint(x: 0, y: size)]
-            }
-        } else {
-            switch self.slantingDirection {
-            case .upward:
-                pathPoints = [CGPoint(x: firstControlPoint, y: 0),
-                              CGPoint(x: size, y: 0),
-                              CGPoint(x: secondControlPoint, y: height),
-                              CGPoint(x: 0, y: height)]
-            default:
-                pathPoints = [CGPoint(x: 0, y: 0),
-                              CGPoint(x: secondControlPoint, y: 0),
-                              CGPoint(x: size, y: height),
-                              CGPoint(x: firstControlPoint, y: height)]
-            }
+        // isFirstCell && isFirstCellExcluded
+        if indexPath.row == 0 && isFirstCellExcluded {
+            return masks.startingMask
         }
 
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: pathPoints[0])
-        bezierPath.addLine(to: pathPoints[1])
-        bezierPath.addLine(to: pathPoints[2])
-        bezierPath.addLine(to: pathPoints[3])
-        bezierPath.close()
+        // isLastCell && isLastCellExcluded
+        if (indexPath.row == numberOfItems - 1) && isLastCellExcluded {
+            return masks.endingMask
+        }
 
-        let slantedLayerMask = CAShapeLayer()
-        slantedLayerMask.path = bezierPath.cgPath
+        return masks.defaultMask
+    }
 
-        return slantedLayerMask
+    /// :nodoc:
+    fileprivate func calculatedMasks(itemSize: CGFloat) -> CollectionViewSlantedMasks {
+        let size = CGSize(width: scrollDirection.isVertical ? width : itemSize,
+                          height: scrollDirection.isVertical ? itemSize : height)
+
+        return CollectionViewSlantedMasks(size: size,
+                                          slantingSize: CGFloat(slantingSize),
+                                          scrollDirection: scrollDirection,
+                                          slantingDirection: slantingDirection)
     }
 
     /// :nodoc:
@@ -227,6 +206,7 @@ import UIKit
     /// :nodoc:
     fileprivate func invalidate() {
         invalidateCache()
+        updateRotationAngle()
         invalidateLayout()
     }
 
@@ -261,7 +241,7 @@ extension CollectionViewSlantedLayout {
             return
         }
 
-        updateRotationAngle()
+        let staticMasks = calculatedMasks(itemSize: max(itemSize, 0))
 
         var position: CGFloat = 0
 
@@ -269,24 +249,26 @@ extension CollectionViewSlantedLayout {
             let indexPath = IndexPath(item: item, section: 0)
             let attributes = CollectionViewSlantedLayoutAttributes(forCellWith: indexPath)
             let size = itemSize(forItemAt: indexPath)
-            let frame: CGRect
 
+            let frame: CGRect
             if scrollDirection.isVertical {
-                frame = CGRect(x: 0, y: position, width: width, height: size)
+                frame = CGRect(x: 0, y: position, width: width, height: size.value)
             } else {
-                frame = CGRect(x: position, y: 0, width: size, height: height)
+                frame = CGRect(x: position, y: 0, width: size.value, height: height)
             }
 
             attributes.frame = frame
             attributes.size = frame.size
-
             attributes.zIndex = zIndexOrder.isAscending ? item : (numberOfItems - item)
+            attributes.slantedLayerMask = maskForItemAtIndexPath(indexPath,
+                                                                 size: size.value,
+                                                                 isDynamicSize: size.isDynamic,
+                                                                 staticMasks: staticMasks)
 
-            attributes.slantedLayerMask = self.maskForItemAtIndexPath(indexPath)
             cachedAttributes.append(attributes)
-            cachedContentSize += size
+            cachedContentSize += size.value
 
-            position += size + lineSpacing - CGFloat(slantingSize)
+            position += size.value + lineSpacing - CGFloat(slantingSize)
         }
     }
 
