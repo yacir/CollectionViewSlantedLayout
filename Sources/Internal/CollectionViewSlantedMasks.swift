@@ -53,17 +53,15 @@ public struct CollectionViewSlantedMasks {
         let points: MaskPoints
 
         if scrollDirection.isVertical {
-            switch slantingDirection {
-            case .downward:
+            if slantingDirection  == .downward {
                 points = CollectionViewSlantedMasks.verticalDownwardMaskPoints(size: size, slantingSize: slantingSize)
-            default:
+            } else {
                 points = CollectionViewSlantedMasks.verticalUpwardMaskPoints(size: size, slantingSize: slantingSize)
             }
         } else {
-            switch slantingDirection {
-            case .downward:
+            if slantingDirection  == .downward {
                 points = CollectionViewSlantedMasks.horizontalDownwardMaskPoints(size: size, slantingSize: slantingSize)
-            default:
+            } else {
                 points = CollectionViewSlantedMasks.horizontalUpwardMaskPoints(size: size, slantingSize: slantingSize)
             }
         }
