@@ -144,6 +144,8 @@ import UIKit
     internal var cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
     /// :nodoc:
     internal var cachedContentSize: CGFloat = 0
+    /// :nodoc:
+    internal var currentSize: CGSize = CGSize.zero
 
     /// :nodoc:
     fileprivate func itemSize(forItemAt indexPath: IndexPath) -> (value: CGFloat, isDynamic: Bool) {
@@ -215,6 +217,7 @@ import UIKit
         cachedAttributes = [CollectionViewSlantedLayoutAttributes]()
         cachedContentSize = 0
     }
+
 }
 
 // MARK: CollectionViewLayout methods overriding
@@ -231,6 +234,9 @@ extension CollectionViewSlantedLayout {
 
     /// :nodoc:
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        guard newBounds.size != currentSize else {
+            return false
+        }
         invalidateCache()
         return true
     }
@@ -241,8 +247,8 @@ extension CollectionViewSlantedLayout {
             return
         }
 
+        currentSize = collectionView?.bounds.size ?? CGSize.zero
         let staticMasks = calculatedMasks(itemSize: max(itemSize, 0))
-
         var position: CGFloat = 0
 
         for item in 0..<numberOfItems {
