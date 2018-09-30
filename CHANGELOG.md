@@ -1,5 +1,9 @@
 # CollectionViewSlantedLayout CHANGELOG
 
+## 3.1.1 (09/30/2018)
+
+* Invalidate the cache for bounds only if the size has changed
+
 ## 3.1.0 (09/29/2018)
 
 * Updates to build specs with Xcode10 / Swift 4.2
