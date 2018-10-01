@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CollectionViewSlantedLayout  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="CollectionViewSlantedLayout  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">CollectionViewSlantedLayout Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/yacir/CollectionViewSlantedLayout"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">CollectionViewSlantedLayout Reference</a>
+        <img id="carat" src="img/carat.png" />
+        CollectionViewSlantedLayout  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes.html#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedCell">CollectionViewSlantedCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/SlantingDirection.html">SlantingDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ZIndexOrder.html">ZIndexOrder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p align="center">
+    <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" alt="Swift 4.2"/>
+    <a href="https://cocoapods.org/pods/CollectionViewSlantedLayout">
+        <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
+    </a>
+    <img src="https://img.shields.io/badge/SPM-✔-blue.svg" alt="SMP ready"/>
+    <img src="https://img.shields.io/badge/Carthage-✔-blue.svg" alt="Carthage compatible"/>
+    <img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat"/>
+    <br/>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://travis-ci.org/yacir/CollectionViewSlantedLayout.svg?branch=master"/>
+    </a>
+    <a href="https://travis-ci.org/yacir/CollectionViewSlantedLayout">
+        <img src="https://codecov.io/gh/yacir/CollectionViewSlantedLayout/branch/master/graph/badge.svg"/>
+    </a>
+    <a href="https://www.codacy.com/app/yacir/CollectionViewSlantedLayout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yacir/CollectionViewSlantedLayout&amp;utm_campaign=Badge_Grade">
+        <img alt="codacy badge" src="https://api.codacy.com/project/badge/Grade/e5ae5581b13245199eb7c39cf178adea" />
+    </a>
+    <a href="http://clayallsopp.github.io/readme-score?url=yacir%2Fcollectionviewslantedlayout">
+        <img alt="Score Me" src="https://img.shields.io/badge/dynamic/json.svg?label=ScoreMe&colorB=62c87a&prefix=&suffix=&query=$.score&uri=http%3A%2F%2Freadme-score-api.herokuapp.com%2Fscore.json%3Furl%3Dyacir%2FCollectionViewSlantedLayout" />
+    </a>
+</p>
+
+<p><strong>CollectionViewSlantedLayout</strong> is a subclass of the <a href="https://developer.apple.com/documentation/uikit/uicollectionviewlayout">UICollectionViewLayout</a> allowing the display of slanted cells in a <a href="https://developer.apple.com/documentation/uikit/uicollectionview">UICollectionView</a>.</p>
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/2587473/34458447-9f434c8a-edd3-11e7-98b7-f32b4284268d.gif" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout"> 
+</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>[x] Pure Swift 4.</li>
+<li>[x] Works with every UICollectionView.</li>
+<li>[x] Horizontal and vertical scrolling support.</li>
+<li>[x] Dynamic cells height</li>
+<li>[x] Fully Configurable</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>CollectionViewSlantedLayout is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+<span class="n">pod</span> <span class="s1">'CollectionViewSlantedLayout'</span><span class="p">,</span> <span class="s1">'~&gt; 3.1'</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p>You can also install it via <a href="https://github.com/Carthage/Carthage">Carthage</a>. To do so, add the following to your Cartfile:</p>
+<pre class="highlight console"><code><span class="go">github 'yacir/CollectionViewSlantedLayout'
+</span></code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<ol>
+<li><p>Import <code><a href="Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a></code> module to your controller</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CollectionViewSlantedLayout</span>
+</code></pre></li>
+<li><p>Create an instance and add it to your <code>UICollectionView</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">slantedSayout</span> <span class="o">=</span> <span class="kt">CollectionViewSlantedLayout</span><span class="p">()</span>
+<span class="kt">UICollectionView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="n">slantedSayout</span><span class="p">)</span>
+</code></pre></li>
+<li><p>Use the <code><a href="Classes.html#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedCell">CollectionViewSlantedCell</a></code> class for your cells or subclass it.</p></li>
+</ol>
+
+<p>Find a demo in the Examples folder.</p>
+<h2 id='properties' class='heading'>Properties</h2>
+
+<ul>
+<li><p><strong>slantingSize</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">slantingSize</span><span class="p">:</span> <span class="kt">UInt</span>
+</code></pre>
+
+<p>The slanting size. The default value of this property is <code>75</code>.</p></li>
+<li><p><strong>slantingDirection</strong>:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">slantingDirection</span><span class="p">:</span> <span class="kt">SlantingDirection</span>
+</code></pre>
+
+<p>The slanting direction. The default value of this property is <code>upward</code>.</p></li>
+<li><p><strong>slantingAngle</strong>:</p>
+<pre class="highlight swift"><code><span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">slantingAngle</span><span class="p">:</span> <span class="kt">CGFloat</span>
+</code></pre>
+
+<p>The angle, in radians, of the slanting. The value of this property could be used to apply a rotation transform on the cell&rsquo;s contentView in the <code>collectionView(_:cellForItemAt:)</code> method implementation.</p>
+<pre class="highlight swift"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">layout</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="k">as?</span> <span class="kt">CollectionViewSlantedLayout</span> <span class="p">{</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">contentView</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">rotationAngle</span><span class="p">:</span> <span class="n">layout</span><span class="o">.</span><span class="n">rotationAngle</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></li>
+<li><p><strong>scrollDirection</strong>:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span>
+</code></pre>
+
+<p>The scroll direction of the grid. The grid layout scrolls along one axis only, either horizontally or vertically. The default value of this property is <code>vertical</code>.</p></li>
+<li><p><strong>isFirstCellExcluded</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">isFirstCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span>
+</code></pre>
+
+<p>Set it to <code>true</code> to disable the slanting for the first cell. The default value of this property is <code>false</code>.</p></li>
+<li><p><strong>isLastCellExcluded</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span>
+</code></pre>
+
+<p>Set it to <code>true</code> to disable the slanting for the last cell. The default value of this property is <code>false</code>.</p></li>
+<li><p><strong>lineSpacing</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span>
+</code></pre>
+
+<p>The spacing to use between two items. The default value of this property is <code>10.0</code>.</p></li>
+<li><p><strong>itemSize</strong>:</p>
+<pre class="highlight swift"><code><span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">itemSize</span><span class="p">:</span> <span class="kt">CGFloat</span>
+</code></pre>
+
+<p>The default size to use for cells. If the delegate does not implement the <code>collectionView(_:layout:sizeForItemAt:)</code> method, the slanted layout uses the value in this property to set the size of each cell. This results in cells that all have the same size. The default value of this property is <code>225</code>.</p></li>
+<li><p><strong>zIndexOrder</strong>:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">zIndexOrder</span><span class="p">:</span> <span class="kt">ZIndexOrder</span>
+</code></pre>
+
+<p>The zIndex order of the items in the layout. The default value of this property is <code>ascending</code>.</p></li>
+</ul>
+<h2 id='protocols' class='heading'>Protocols</h2>
+
+<p>The <code><a href="Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a></code> protocol defines methods that let you coordinate with a <code><a href="Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a></code> object to implement a slanted layout. The <code><a href="Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a></code> protocol has the following methods:</p>
+<pre class="highlight swift"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span>
+                             <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">CollectionViewSlantedLayout</span><span class="p">,</span>
+                             <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span>
+</code></pre>
+
+<p>This method asks the delegate for the size of the specified item’s cell.</p>
+
+<p>If you do not implement this method, the slanted layout uses the values in its <code>itemSize</code> property to set the size of items instead. Your implementation of this method can return a fixed set of sizes or dynamically adjust the sizes based on the cell’s content.</p>
+<h2 id='author' class='heading'>Author</h2>
+
+<p><a href="https://yassir.fr">Yassir Barchi</a></p>
+<h2 id='acknowledgement' class='heading'>Acknowledgement</h2>
+
+<p>This framework is inspired by <a href="https://dribbble.com/shots/1727594-Slanted-Table-Cells-With-Parallax?_=1456679145403">this prototype</a> released by <a href="https://dribbble.com/rrridges">Matt Bridges</a>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p><strong>CollectionViewSlantedLayout</strong> is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2018-10-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
