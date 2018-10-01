@@ -66,11 +66,12 @@
             <h1>CollectionViewSlantedLayout</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="kd">class</span> <span class="kt">CollectionViewSlantedLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">CollectionViewSlantedLayout</span> <span class="p">:</span> <span class="kt">UICollectionViewLayout</span></code></pre>
 
                 </div>
               </div>
-            <p>CollectionViewSlantedLayout is a subclass of UICollectionViewLayout 
+            <p>CollectionViewSlantedLayout is a subclass of UICollectionViewLayout
 allowing the display of slanted content on UICollectionView.</p>
 
 <p>By default, this UICollectionViewLayout has initialize a set
@@ -102,7 +103,8 @@ of properties to work as designed.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingSize</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="mi">75</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">slantingSize</span><span class="p">:</span> <span class="kt">UInt</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -131,7 +133,8 @@ of properties to work as designed.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">slantingDirection</span><span class="p">:</span> <span class="kt"><a href="../Enums/SlantingDirection.html">SlantingDirection</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">upward</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">slantingDirection</span><span class="p">:</span> <span class="kt"><a href="../Enums/SlantingDirection.html">SlantingDirection</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -155,9 +158,9 @@ of properties to work as designed.</p>
 
 <p>The value of this property could be used to apply a rotation transform on the cell&rsquo;s contentView in the
 <code>collectionView(_:cellForItemAt:)</code> method implementation.</p>
-<pre class="highlight plaintext"><code>if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
-   cell.contentView.transform = CGAffineTransform(rotationAngle: layout.rotationAngle)
-}
+<pre class="highlight swift"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">layout</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="k">as?</span> <span class="kt">CollectionViewSlantedLayout</span> <span class="p">{</span>
+   <span class="n">cell</span><span class="o">.</span><span class="n">contentView</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">rotationAngle</span><span class="p">:</span> <span class="n">layout</span><span class="o">.</span><span class="n">rotationAngle</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre>
 
                       </div>
@@ -165,7 +168,8 @@ of properties to work as designed.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">slantingAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="nf">fileprivate</span><span class="p">(</span><span class="k">set</span><span class="p">)</span> <span class="k">var</span> <span class="nv">slantingAngle</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
 
                         </div>
                       </div>
@@ -195,7 +199,8 @@ The default value of this property is <code>vertical</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">.</span><span class="kt">ScrollDirection</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -224,7 +229,8 @@ The default value of this property is <code>vertical</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isFirstCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">isFirstCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -253,7 +259,8 @@ The default value of this property is <code>vertical</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">isLastCellExcluded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -282,7 +289,8 @@ The default value of this property is <code>vertical</code>.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -314,7 +322,8 @@ uses the value in this property to set the size of each cell. This results in ce
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@IBInspectable</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">itemSize</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">225</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">itemSize</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -343,7 +352,8 @@ uses the value in this property to set the size of each cell. This results in ce
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">zIndexOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ZIndexOrder.html">ZIndexOrder</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">ascending</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="k">var</span> <span class="nv">zIndexOrder</span><span class="p">:</span> <span class="kt"><a href="../Enums/ZIndexOrder.html">ZIndexOrder</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -355,8 +365,8 @@ uses the value in this property to set the size of each cell. This results in ce
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2018-01-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2018-10-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
