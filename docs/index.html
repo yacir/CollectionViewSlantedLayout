@@ -4,64 +4,93 @@
     <title>CollectionViewSlantedLayout  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="CollectionViewSlantedLayout  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">CollectionViewSlantedLayout Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/yacir/CollectionViewSlantedLayout"><img src="img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">CollectionViewSlantedLayout Reference</a>
-        <img id="carat" src="img/carat.png" />
-        CollectionViewSlantedLayout  Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          CollectionViewSlantedLayout Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/yacir/CollectionViewSlantedLayout">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fyassir%2Edev%2FCollectionViewSlantedLayout%2Fdocsets%2FCollectionViewSlantedLayout%2Exml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">CollectionViewSlantedLayout Reference</a>
+      <img class="carat" src="img/carat.png" />
+      CollectionViewSlantedLayout  Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes.html#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedCell">CollectionViewSlantedCell</a>
+                <a class="nav-group-task-link" href="Classes.html#/c:@M@CollectionViewSlantedLayout@objc(cs)CollectionViewSlantedCell">CollectionViewSlantedCell</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a>
+                <a class="nav-group-task-link" href="Classes/CollectionViewSlantedLayout.html">CollectionViewSlantedLayout</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enumerations</a>
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/SlantingDirection.html">SlantingDirection</a>
+                <a class="nav-group-task-link" href="Enums/SlantingDirection.html">SlantingDirection</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/ZIndexOrder.html">ZIndexOrder</a>
+                <a class="nav-group-task-link" href="Enums/ZIndexOrder.html">ZIndexOrder</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a>
+                <a class="nav-group-task-link" href="Protocols/CollectionViewDelegateSlantedLayout.html">CollectionViewDelegateSlantedLayout</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             
             <p align="center">
     <img src="https://cdn.rawgit.com/yacir/CollectionViewSlantedLayout/3b5e08c1/Resources/SlantedLayout.svg" alt="CollectionViewSlantedLayout" title="CollectionViewSlantedLayout" width="700"/>
@@ -206,14 +235,16 @@ it, simply add the following line to your Podfile:</p>
 
 <p><strong>CollectionViewSlantedLayout</strong> is available under the MIT license. See the LICENSE file for more info.</p>
 
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2018-10-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
+
       </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="http://yassir.fr" target="_blank" rel="external">Yassir Barchi</a>. All rights reserved. (Last updated: 2019-10-19)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

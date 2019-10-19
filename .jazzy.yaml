@@ -2,7 +2,14 @@ module: CollectionViewSlantedLayout
 author: Yassir Barchi
 author_url: http://yassir.fr
 github_url: https://github.com/yacir/CollectionViewSlantedLayout
-swift_version: 4.2
+root_url: https://yassir.dev/CollectionViewSlantedLayout/
+swift_version: 5.1
+theme: fullwidth
 exclude: Sources/Internal/*,Sources/Extentions/*
 readme: README.md
 output: docs
+xcodebuild_arguments: 
+  - "-project" 
+  - "CollectionViewSlantedLayout.xcodeproj" 
+  - "-scheme"
+  - "CollectionViewSlantedLayout"
