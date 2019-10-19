@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YBSlantedCollectionViewLayout  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="YBSlantedCollectionViewLayout  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">YBSlantedCollectionViewLayout Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/yacir/YBSlantedCollectionViewLayout"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">YBSlantedCollectionViewLayout Reference</a>
+        <img id="carat" src="img/carat.png" />
+        YBSlantedCollectionViewLayout  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/YBSlantedCollectionViewLayout.html">YBSlantedCollectionViewLayout</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/YBSlantedCollectionViewLayoutSizeOptions.html">YBSlantedCollectionViewLayoutSizeOptions</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#ybslantedcollectionviewlayout' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='ybslantedcollectionviewlayout'>YBSlantedCollectionViewLayout</h1>
+
+<p><a href="http://cocoapods.org/pods/YBSlantedCollectionViewLayout"><img src="https://img.shields.io/cocoapods/v/YBSlantedCollectionViewLayout.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/YBSlantedCollectionViewLayout"><img src="https://img.shields.io/cocoapods/l/YBSlantedCollectionViewLayout.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/YBSlantedCollectionViewLayout"><img src="https://img.shields.io/cocoapods/p/YBSlantedCollectionViewLayout.svg?style=flat" alt="Platform"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://travis-ci.org/yacir/YBSlantedCollectionViewLayout"><img src="https://travis-ci.org/yacir/YBSlantedCollectionViewLayout.svg?branch=master" alt="Build Status"></a> </p>
+<a href='#overview' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='overview'>Overview</h2>
+
+<p>YBSlantedCollectionViewLayout is a subclass of UICollectionViewLayout allowing the display of slanted content on UICollectionView.</p>
+<a href='#a_href_https_appetize_io_app_nd8vgwg0rkke19nmw3wzkapr5g_live_demo_a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='a_href_https_appetize_io_app_nd8vgwg0rkke19nmw3wzkapr5g_live_demo_a'><a href="https://appetize.io/app/nd8vgwg0rkke19nmw3wzkapr5g">Live Demo</a></h2>
+
+<p align="center" >
+
+    <img src="https://cloud.githubusercontent.com/assets/2587473/13427516/d9af399e-dfb4-11e5-8109-ae997dc7c340.gif" alt="YBSlantedCollectionViewLayout" title="YBSlantedCollectionViewLayout"> 
+
+</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>YBSlantedCollectionViewLayout contains six properties to customize the interface.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">slantingDelta</span><span class="p">:</span> <span class="kt">UInt</span>
+<span class="k">var</span> <span class="nv">reverseSlantingAngle</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="k">var</span> <span class="nv">firstCellSlantingEnabled</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="k">var</span> <span class="nv">lastCellSlantingEnabled</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="k">var</span> <span class="nv">lineSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span>
+<span class="k">var</span> <span class="nv">scrollDirection</span><span class="p">:</span> <span class="kt">UICollectionViewScrollDirection</span>
+<span class="k">var</span> <span class="nv">itemSizeOptions</span><span class="p">:</span> <span class="kt">YBSlantedCollectionViewLayoutSizeOptions</span>
+</code></pre>
+
+<ul>
+<li><em>slantingDelta</em> is the slanting delta.  Defaults to 50</li>
+<li><em>reverseSlantingAngle</em> allows to reverse the slanting angle if the value is <code>true</code>. By default, this property is set to <code>false</code></li>
+<li><em>firstCellSlantingEnabled</em> allows to enable the slanting for the first cell. By default, this property is set to <code>true</code></li>
+<li><em>lastCellSlantingEnabled</em> allows to enable the slanting for the last cell. By default, this property is set to <code>true</code></li>
+<li><em>lineSpacing</em> is the spacing to use between two items. Defaults to 10.0</li>
+<li><em>scrollDirection</em> is the scroll direction. Defaults to <code>UICollectionViewScrollDirectionVertical</code></li>
+<li><em>itemSizeOptions</em> allows to set the item&rsquo;s width/height depending on the scroll direction.</li>
+</ul>
+<a href='#apply_the_slanting_mask' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='apply_the_slanting_mask'>Apply the slanting mask</h3>
+
+<p>To apply the slanting mask on the cellView, use the <code>YBSlantedCollectionViewCell</code> or subclass it.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
+
+<p>YBSlantedCollectionViewLayout is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"YBSlantedCollectionViewLayout"</span><span class="p">,</span> <span class="s1">'~&gt; 2.1'</span>
+</code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+
+<p>You can also install it via <a href="https://github.com/Carthage/Carthage">Carthage</a>. To do so, add the following to your Cartfile:</p>
+<pre class="highlight plaintext"><code>github 'yacir/YBSlantedCollectionViewLayout'
+</code></pre>
+<a href='#roadmap' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='roadmap'>Roadmap</h2>
+
+<ul>
+<li>[x] Improve the attribution of the clic</li>
+<li>[x] Carthage support</li>
+<li>[x] Tests</li>
+</ul>
+<a href='#author' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='author'>Author</h2>
+
+<p><a href="https://linkedin.com/in/yassir-barchi-318a7949">Yassir Barchi</a></p>
+<a href='#acknowledgement' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='acknowledgement'>Acknowledgement</h2>
+
+<p>This framework is inspired by <a href="https://dribbble.com/shots/1727594-Slanted-Table-Cells-With-Parallax?_=1456679145403">this prototype</a> released by <a href="https://dribbble.com/rrridges">Matt Bridges</a>.</p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>YBSlantedCollectionViewLayout is available under the MIT license. See the LICENSE file for more info.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://linkedin.com/in/yassir-barchi-318a7949" target="_blank" rel="external">Yassir</a>. All rights reserved. (Last updated: 2016-09-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
