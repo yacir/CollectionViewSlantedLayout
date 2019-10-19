@@ -1,7 +1,7 @@
 /**
  This file is part of the CollectionViewSlantedLayout package.
  
- Copyright (c) 2017 Yassir Barchi <github@yassir.fr>
+ Copyright © 2016-present Yassir Barchi <github@yassir.fr>
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal

@@ -3,7 +3,7 @@
 //  CollectionViewSlantedLayout
 //
 //  Created by Yassir Barchi on 02/28/2016.
-//  Copyright (c) 2016 Yassir Barchi. All rights reserved.
+//  Copyright © 2016-present Yassir Barchi. All rights reserved.
 //
 
 import UIKit

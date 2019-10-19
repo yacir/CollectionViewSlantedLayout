@@ -3,7 +3,7 @@
 //  CollectionViewSlantedLayout
 //
 //  Created by Yassir Barchi on 28/02/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Copyright © 2016-present Yassir Barchi. All rights reserved.
 //
 
 import Foundation
