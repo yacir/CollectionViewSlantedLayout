@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" alt="Swift 4.2"/>
+    <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" alt="Swift 5.1"/>
     <a href="https://cocoapods.org/pods/CollectionViewSlantedLayout">
         <img src="https://img.shields.io/cocoapods/v/CollectionViewSlantedLayout.svg?style=flat)"/>
     </a>
@@ -33,7 +33,7 @@
 </p>
 
 ## Features
-- [x] Pure Swift 4.
+- [x] Pure Swift 5.
 - [x] Works with every UICollectionView.
 - [x] Horizontal and vertical scrolling support.
 - [x] Dynamic cells height
