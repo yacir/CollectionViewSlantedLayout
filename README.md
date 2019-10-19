@@ -21,9 +21,6 @@
     <a href="https://www.codacy.com/app/yacir/CollectionViewSlantedLayout?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yacir/CollectionViewSlantedLayout&amp;utm_campaign=Badge_Grade">
         <img alt="codacy badge" src="https://api.codacy.com/project/badge/Grade/e5ae5581b13245199eb7c39cf178adea" />
     </a>
-    <a href="http://clayallsopp.github.io/readme-score?url=yacir%2Fcollectionviewslantedlayout">
-   		<img alt="Score Me" src="https://img.shields.io/badge/dynamic/json.svg?label=ScoreMe&colorB=62c87a&prefix=&suffix=&query=$.score&uri=http%3A%2F%2Freadme-score-api.herokuapp.com%2Fscore.json%3Furl%3Dyacir%2FCollectionViewSlantedLayout" />
-    </a>
 </p>
 
 **CollectionViewSlantedLayout** is a subclass of the [UICollectionViewLayout](https://developer.apple.com/documentation/uikit/uicollectionviewlayout) allowing the display of slanted cells in a [UICollectionView](https://developer.apple.com/documentation/uikit/uicollectionview).
