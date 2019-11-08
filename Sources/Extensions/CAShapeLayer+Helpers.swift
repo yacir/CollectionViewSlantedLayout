@@ -23,6 +23,7 @@
  */
 
 import QuartzCore
+import UIKit
 
 /// :nodoc:
 extension CAShapeLayer {
