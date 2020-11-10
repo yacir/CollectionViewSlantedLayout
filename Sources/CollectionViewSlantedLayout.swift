@@ -289,5 +289,11 @@ extension CollectionViewSlantedLayout {
     override open func layoutAttributesForItem(at indexPath: IndexPath) -> CollectionViewSlantedLayoutAttributes? {
         return cachedAttributes[indexPath.item]
     }
+ 
+    /// :nodoc:
+    override open func invalidateLayout() {
+        super.invalidateLayout()
+        self.cachedAttributes.removeAll()
+    }
 
 }
